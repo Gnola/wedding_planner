@@ -2,11 +2,22 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title><%=guests.name%></title>
+      <style>
+        .RSVP {
+          color: green;
+        }
+      </style>
   </head>
   <body>
-    <h1>SHOW Guest</h1>
-    <h2><%=guests.name%></h2>
+    <h1><%=guests.name%></h1>
+    +1: <%=guests.plusOne%></h2><br>
+    RSVP:
+    <div class="RSVP">
+      <%=guests.rsvp%></h2>
+    </div><br>
+
+    <a href="/guests/<%=guests.id%>/edit">Edit</a><br>
     <a href="/guests">HOME</a>
   </body>
 </html>

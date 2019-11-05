@@ -5,15 +5,14 @@
     <title>Edit</title>
   </head>
   <body>
-    <h1>Edit Guest</h1>
+    <h1>Edit <%=guests.name%></h1>
     <form class="" action="/guests/<%=guests.id%>?_method=PUT" method="POST">
       Name: <input type="text" name="name" value="<%=guests.name%>"><br>
       +1: <input type="text" name="plusOne" value="<%=guests.plusOne%>"><br>
-      RSVP: <input type="checkbox" name="rsvp"
-      <% if (guests.rsvp === true){ %>
-        checked
-      <% } %>
-      /><br>
+      RSVP: <%=guests.rsvp%><br>
+      <input type="radio" name="rsvp" value="I'm in!"> Im in!<br>
+      <input type="radio" name="rsvp" value="Sadly I can't make it"> Sadly I can't make it <br>
+      <input type="radio" name="rsvp" value="Not sure yet"> Not sure yet <br>
       <input type="submit" name="" value="Submit Changes">
     </form>
   </body>

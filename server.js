@@ -47,11 +47,6 @@ app.get('/guests/new', (req, res) => {
 
 // CREATE (POST) GUEST
 app.post('/guests/', (req, res) => {
-  if (req.body.rsvp === 'on') {
-    req.body.rsvp = true;
-  } else {
-    req.body.rsvp = false;
-  }
   Guest.create(
     req.body,
     (err, createdGuest) => {
@@ -102,11 +97,6 @@ app.delete('/guests/:id', (req, res) => {
 
 // EDIT GUEST
 app.get('/guests/:id/edit', (req, res) => {
-  if(req.body.rsvp === 'on'){
-    req.body.rsvp = true;
-} else if (req.body.rsvp === 'off'){
-    req.body.rsvp = false;
-}
   Guest.findById(
     req.params.id,
     (err, foundGuest) => {
@@ -122,16 +112,15 @@ app.get('/guests/:id/edit', (req, res) => {
 
 // UPDATE GUEST
 app.put('/guests/:id', (req, res) => {
-  res.send(req.body)
-  // Guest.findByIdAndUpdate(
-  //   req.params.id,
-  //   req.body,
-  //   {new:true},
-  //   (err, updatedGuest) => {
-  //     // res.send(updatedGuest)
-  //     res.redirect('/guests')
-  //   }
-  // )
+  Guest.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {new:true},
+    (err, updatedGuest) => {
+      // res.send(updatedGuest)
+      res.redirect('/guests/' + updatedGuest.id)
+    }
+  )
 })
 
 
