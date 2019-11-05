@@ -6,23 +6,13 @@ const mongoose = require('mongoose');
 const db = mongoose.connection
 require('dotenv').config()
 
+const Guest = require('./models/guests.js');
+
 // PORT //
 const PORT = process.env.PORT // Allow use of Heroku's port or your own local port, depending on the environment
-  // console.log(PORT);
-
 
 // DATABASE //
 const MONGODB_URI = process.env.MONGODB_URI
-  // console.log(MONGODB_URI);
-
-// CONNECT TO MONGO //
-mongoose.connect(
-  MONGODB_URI ,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-  });
 
 // SUCCESS / ERROR //
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -36,10 +26,127 @@ app.use(express.urlencoded({extended:false})); // pupulate req.body with parsed 
 app.use(methodOverride('_method')); // be able to use DELETE and PUT routes
 
 
-// ROUTES //
+
+
+// ROUTES ON SERVER //
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  res.render('welcome.ejs')
 })
+
+
+
+
+
+////////////////// ROUTES TO MOVE ///////////////////////
+
+// NEW GUEST
+app.get('/guests/new', (req, res) => {
+  // res.send('new')
+  res.render('guests/newguest.ejs')
+})
+
+// CREATE (POST) GUEST
+app.post('/guests/', (req, res) => {
+  if (req.body.rsvp === 'on') {
+    req.body.rsvp = true;
+  } else {
+    req.body.rsvp = false;
+  }
+  Guest.create(
+    req.body,
+    (err, createdGuest) => {
+      res.redirect('/guests')
+    }
+  )
+  console.log(req.body);
+})
+
+
+// INDEX (HOME)
+app.get('/guests/', (req, res) => {
+  Guest.find(
+    {},
+    (err, allGuests) => {
+      res.render(
+        'guests/index.ejs',
+        { guests: allGuests }
+      )
+    }
+  )
+})
+
+
+// SHOW GUEST
+app.get('/guests/:id', (req, res) => {
+  Guest.findById(
+    req.params.id,
+    (err, foundGuest) => {
+      res.render(
+        'guests/showguest.ejs',
+        { guests: foundGuest}
+      )
+    }
+  )
+})
+
+
+// DELETE GUEST
+app.delete('/guests/:id', (req, res) => {
+  Guest.findByIdAndRemove(
+    req.params.id,
+    (err, data) => {
+      res.redirect('/guests')
+    }
+  )
+})
+
+// EDIT GUEST
+app.get('/guests/:id/edit', (req, res) => {
+  if(req.body.rsvp === 'on'){
+    req.body.rsvp = true;
+} else if (req.body.rsvp === 'off'){
+    req.body.rsvp = false;
+}
+  Guest.findById(
+    req.params.id,
+    (err, foundGuest) => {
+      res.render(
+        'guests/editguest.ejs',
+        {
+          guests : foundGuest
+        }
+      )
+    }
+  )
+})
+
+// UPDATE GUEST
+app.put('/guests/:id', (req, res) => {
+  res.send(req.body)
+  // Guest.findByIdAndUpdate(
+  //   req.params.id,
+  //   req.body,
+  //   {new:true},
+  //   (err, updatedGuest) => {
+  //     // res.send(updatedGuest)
+  //     res.redirect('/guests')
+  //   }
+  // )
+})
+
+
+
+
+
+// CONNECT TO MONGO //
+mongoose.connect(
+  MONGODB_URI ,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  });
+
 
 // LISTENER //
 app.listen(PORT, () => {

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Edit</title>
+  </head>
+  <body>
+    <h1>Edit Guest</h1>
+    <form class="" action="/guests/<%=guests.id%>?_method=PUT" method="POST">
+      Name: <input type="text" name="name" value="<%=guests.name%>"><br>
+      +1: <input type="text" name="plusOne" value="<%=guests.plusOne%>"><br>
+      RSVP: <input type="checkbox" name="rsvp"
+      <% if (guests.rsvp === true){ %>
+        checked
+      <% } %>
+      /><br>
+      <input type="submit" name="" value="Submit Changes">
+    </form>
+  </body>
+</html>
