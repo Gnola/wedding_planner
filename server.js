@@ -5,8 +5,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const db = mongoose.connection
 require('dotenv').config()
-
-const Guest = require('./models/guests.js');
+const session = require('express-session');
 
 // PORT //
 const PORT = process.env.PORT // Allow use of Heroku's port or your own local port, depending on the environment
@@ -24,103 +23,36 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.static('public')) // use publuc folder for static assets
 app.use(express.urlencoded({extended:false})); // pupulate req.body with parsed info from forms
 app.use(methodOverride('_method')); // be able to use DELETE and PUT routes
+app.use(session({ // set up session cookies
+  secret: 'randomstring',
+  resave: false,
+  saveUninitialized:false
+}))
 
 
+// CONTROLLER CONNECTIONS //
+const guestsController = require('./controllers/guests.js'); // GUESTS
+app.use('/guests', guestsController)
+
+const userController = require('./controllers/users.js') // USERS
+app.use('/users', userController)
+
+const sessionController = require('./controllers/session.js') // USERS
+app.use('/sessions', sessionController)
 
 
-// ROUTES ON SERVER //
-app.get('/', (req, res) => {
-  res.render('welcome.ejs')
+// ROUTES //
+app.get('/', (req, res) => { // WELCOME.EJS
+  res.render('welcome.ejs') // Sign up or Log in
 })
 
-
-
-
-
-////////////////// ROUTES TO MOVE ///////////////////////
-
-// NEW GUEST
-app.get('/guests/new', (req, res) => {
-  // res.send('new')
-  res.render('guests/newguest.ejs')
+app.get('/set', (req, res) => {
+  req.session.username = "cookie";
+  res.send('I set a cookie')
 })
 
-// CREATE (POST) GUEST
-app.post('/guests/', (req, res) => {
-  Guest.create(
-    req.body,
-    (err, createdGuest) => {
-      res.redirect('/guests')
-    }
-  )
-  console.log(req.body);
-})
-
-
-// INDEX (HOME)
-app.get('/guests/', (req, res) => {
-  Guest.find(
-    {},
-    (err, allGuests) => {
-      res.render(
-        'guests/index.ejs',
-        { guests: allGuests }
-      )
-    }
-  )
-})
-
-
-// SHOW GUEST
-app.get('/guests/:id', (req, res) => {
-  Guest.findById(
-    req.params.id,
-    (err, foundGuest) => {
-      res.render(
-        'guests/showguest.ejs',
-        { guests: foundGuest}
-      )
-    }
-  )
-})
-
-
-// DELETE GUEST
-app.delete('/guests/:id', (req, res) => {
-  Guest.findByIdAndRemove(
-    req.params.id,
-    (err, data) => {
-      res.redirect('/guests')
-    }
-  )
-})
-
-// EDIT GUEST
-app.get('/guests/:id/edit', (req, res) => {
-  Guest.findById(
-    req.params.id,
-    (err, foundGuest) => {
-      res.render(
-        'guests/editguest.ejs',
-        {
-          guests : foundGuest
-        }
-      )
-    }
-  )
-})
-
-// UPDATE GUEST
-app.put('/guests/:id', (req, res) => {
-  Guest.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    {new:true},
-    (err, updatedGuest) => {
-      // res.send(updatedGuest)
-      res.redirect('/guests/' + updatedGuest.id)
-    }
-  )
+app.get('/get', (req, res) => {
+  res.send(req.session.username)
 })
 
 
