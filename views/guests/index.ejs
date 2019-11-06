@@ -21,23 +21,26 @@
 
   <body>
     <div class="HEADER">
-      <!-- Log Out -->
-        <a class="button" href="/logout">Log Out</a>
       <!-- Title -->
         <h1>Wedding Guest List</h1>
-      <!-- QUICK GUEST ADD -->
-        <div class="QUICK-ADD">
-          <h5>Quick Add</h5>
-          <form action="/guests" method="POST">
-            Name: <input type="text" name="name">
-            <input class="button button-primary" type="submit" value="Add Guest">
-          </form>
-        </div>
+      <!-- Log Out -->
+        <a class="button" href="/logout">Log Out</a>
     </div>
 
+    <!-- QUICK GUEST ADD -->
+    <div class="QUICK-ADD">
+      <h4>Quick Add</h4>
+      <form action="/guests" method="POST">
+        <div class="row">
+          Name: <input type="text" name="name">
+          +1: <input type="text" name="plusOne">
+          RSVP: <input type="text" name="rsvp">
+          Category: <input type="text" name="category">
+          <input class="button button-primary" type="submit" value="Add Guest">
+        </div>
 
-
-
+      </form>
+    </div>
 
     <!-- GUEST LIST -->
     <div class="GUESTLIST">

@@ -2,25 +2,37 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>New Guest</title>
+    <link rel="stylesheet" href="/new.css">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
   </head>
   <body>
-    <h1>New Guest</h1>
     <!-- Add GUEST to MODELS/GUESTS.JS and use userSchema for CONTROLLERS/GUESTS -->
-    <form action="/guests" method="POST">
-      Name: <input type="text" name="name"><br>
-      +1: <input type="text" name="plusOne"><br>
-      RSVP: <br>
-        <input type="radio" name="rsvp" value="I'm in!"> Im in!<br>
-        <input type="radio" name="rsvp" value="Sadly I can't make it"> Sadly I can't make it <br>
-        <input type="radio" name="rsvp" value="Not sure yet"> Not sure yet <br>
-      Category:
-        <select name="category">
-          <option value="Family">Family</option>
-          <option value="Friends">Friends</option>
-          <option value="Other">Other</option>
-        </select><br>
-        <input type="submit" value="Add Guest"><br>
-    </form>
+    <div class="GUESTS">
+      <h1>New Guest</h1>
+      <form action="/guests" method="POST">
+        <div class="row">
+          <strong>Name:</strong> <input type="text" name="name">
+          <strong>+1:</strong> <input type="text" name="plusOne">
+        </div>
+        <div class="">
+        <strong>RSVP:</strong> <br>
+            <input type="radio" name="rsvp" value="I'm in!"> Im in!<br>
+            <input type="radio" name="rsvp" value="Sadly I can't make it"> Sadly I can't make it <br>
+            <input type="radio" name="rsvp" value="Not sure yet"> Not sure yet <br><br>
+          <strong>Category:</strong> <br>
+            <select name="category">
+              <option value="Family">Family</option>
+              <option value="Friends">Friends</option>
+              <option value="Other">Other</option>
+            </select><br><br>
+            <div class="BUTTONS">
+              <input class="button button-primary" type="submit" value="Add Guest">
+              <a class="button" href="/guests">Cancel</a>
+            </div>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
