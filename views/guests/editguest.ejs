@@ -3,36 +3,57 @@
   <head>
     <meta charset="utf-8">
     <title>Edit</title>
+    <link rel="stylesheet" href="/edit.css">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
   </head>
   <body>
-    <h1>Edit <%=guests.name%></h1>
-    <form class="" action="/guests/<%=guests.id%>?_method=PUT" method="POST">
-      Name: <input type="text" name="name" value="<%=guests.name%>"><br>
-      +1: <input type="text" name="plusOne" value="<%=guests.plusOne%>"><br>
-      RSVP: <%=guests.rsvp%><br>
-        <input type="radio" name="rsvp" value="I'm in!"
-          <% if (guests.rsvp === "I'm in!") { %>
-            checked
-          <% } %>
-        > Im in!<br>
-        <input type="radio" name="rsvp" value="Sadly I can't make it"
-          <% if (guests.rsvp === "Sadly I can't make it") { %>
-            checked
-          <% } %>
-        > Sadly I can't make it <br>
-        <input type="radio" name="rsvp" value="Not sure yet"
-          <% if (guests.rsvp === "Not sure yet") { %>
-            checked
-          <% } %>
-        > Not sure yet <br>
-      Category: <%=guests.category%><br>
-        <select name="category">
-          <option value="Family">Family</option>
-          <option value="Friends">Friends</option>
-          <option value="Other">Other</option>
-        </select><br>
-      <input type="submit" name="" value="Submit Changes"><br>
-      <a href="/guests/<%=guests.id%>">Cancel</a>
-    </form>
+    <div class="HEADER">
+      <a class="button" href="/guests">Home</a>
+    </div>
+    <div class="GUESTS">
+      <h1>Edit <%=guests.name%></h1>
+      <form action="/guests/<%=guests.id%>?_method=PUT" method="POST">
+        <div class="row">
+           <div class="six columns">
+        <strong>Name:</strong>  <input type="text" name="name" value="<%=guests.name%>"><br>
+        <strong>+1:</strong> <br><input type="text" name="plusOne" value="<%=guests.plusOne%>">
+          </div>
+          <div class="six columns">
+        <strong>RSVP:</strong> <br>
+          <input type="radio" name="rsvp" value="I'm in!"
+            <% if (guests.rsvp === "I'm in!") { %>
+              checked
+            <% } %>
+          > Im in!<br>
+          <input type="radio" name="rsvp" value="Sadly I can't make it"
+            <% if (guests.rsvp === "Sadly I can't make it") { %>
+              checked
+            <% } %>
+          > Sadly I can't make it <br>
+          <input type="radio" name="rsvp" value="Not sure yet"
+            <% if (guests.rsvp === "Not sure yet") { %>
+              checked
+            <% } %>
+          > Not sure yet <br>
+          </div>
+          <div class="six columns">
+        <strong>Category:</strong> <%=guests.category%><br>
+          <select class="u-full-width"name="category">
+            <option value="Family">Family</option>
+            <option value="Friends">Friends</option>
+            <option value="Other">Other</option>
+          </select><br><br>
+          </div>
+        </div>
+        <div class="BUTTONS">
+          <input class="button button-primary" type="submit" name="" value="Submit Changes">
+          <a class="button" href="/guests/<%=guests.id%>">Cancel</a>
+        </div>
+
+
+
+      </form>
+    </div>
   </body>
 </html>
