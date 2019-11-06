@@ -10,9 +10,21 @@
       Name: <input type="text" name="name" value="<%=guests.name%>"><br>
       +1: <input type="text" name="plusOne" value="<%=guests.plusOne%>"><br>
       RSVP: <%=guests.rsvp%><br>
-      <input type="radio" name="rsvp" value="I'm in!"> Im in!<br>
-      <input type="radio" name="rsvp" value="Sadly I can't make it"> Sadly I can't make it <br>
-      <input type="radio" name="rsvp" value="Not sure yet"> Not sure yet <br>
+      <input type="radio" name="rsvp" value="I'm in!"
+        <% if (guests.rsvp === "I'm in!") { %>
+          checked
+        <% } %>
+      > Im in!<br>
+      <input type="radio" name="rsvp" value="Sadly I can't make it"
+        <% if (guests.rsvp === "Sadly I can't make it") { %>
+          checked
+        <% } %>
+      > Sadly I can't make it <br>
+      <input type="radio" name="rsvp" value="Not sure yet"
+        <% if (guests.rsvp === "Not sure yet") { %>
+          checked
+        <% } %>
+      > Not sure yet <br>
       <input type="submit" name="" value="Submit Changes">
     </form>
   </body>

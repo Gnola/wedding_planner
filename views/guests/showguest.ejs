@@ -4,9 +4,15 @@
     <meta charset="utf-8">
     <title><%=guests.name%></title>
       <style>
-        .RSVP {
-          color: green;
-        }
+      <% if (guests.rsvp === "I'm in!") {%>
+            .RSVP {
+              color: green;
+            }
+      <% } else if (guests.rsvp === "Sadly I can't make it") { %>
+            .RSVP {
+              color: red;
+            }
+      <% } %>
       </style>
   </head>
   <body>
@@ -14,7 +20,7 @@
     +1: <%=guests.plusOne%></h2><br>
     RSVP:
     <div class="RSVP">
-      <%=guests.rsvp%></h2>
+      <%=guests.rsvp%>
     </div><br>
 
     <a href="/guests/<%=guests.id%>/edit">Edit</a><br>

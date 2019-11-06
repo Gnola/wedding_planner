@@ -5,24 +5,41 @@
     <title>Home</title>
   </head>
   <body>
+    <!-- HEADER -->
+    <div class="HEADER">
+      <h1>Wedding Guest List</h1>
+      <!-- QUICK GUEST ADD -->
+      <div class="QUICK-ADD">
+        <h3>Quick Add</h3>
+        <form action="/guests" method="POST">
+          Name: <input type="text" name="name"><br>
+          <input type="submit" value="Add Guest">
+        </form>
+      </div>
+      <!-- Log Out -->
+      <a href="/logout">Log Out</a>
+    </div><br>
 
-    <h1>Guest List</h1>
+    <!-- GUEST LIST -->
+    <div class="GUESTLIST">
+      <% for (let i = 0; i < guests.length; i++) { %>
+        <!-- GUESTS -->
+        <div class="GUESTS">
+          <a href="/guests/<%=guests[i].id%>"><%=guests[i].name%></a><br>
+            <!-- EDIT Guest -->
+          <a href="/guests/<%=guests[i].id%>/edit">Edit</a><br>
+            <!-- DELETE Guest -->
+          <form class="" action="/guests/<%=guests[i].id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE">
+          </form> <br>
+        </div>
+      <% } %>
+    </div>
 
-    <!-- GUESTS -->
-    <% for (let i = 0; i < guests.length; i++) { %>
-      <!-- SHOW Guest -->
-      <h1><a href="/guests/<%=guests[i].id%>"><%=guests[i].name%></a></h1>
-      <!-- EDIT Guest -->
-      <a href="/guests/<%=guests[i].id%>/edit">Edit</a><br>
-      <!-- DELETE Guest -->
-      <form class="" action="/guests/<%=guests[i].id%>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE">
-      </form><br>
-    <% } %>
+    <div class="BOTTOM">
+      <!-- NEW Guest -->
+      <a href="/guests/new">Create New</a><br>
+    </div>
 
-    <!-- NEW Guest -->
-    <a href="/guests/new">Create New</a><br>
-    <!-- Log Out -->
-    <a href="/logout">Log Out</a>
   </body>
 </html>
