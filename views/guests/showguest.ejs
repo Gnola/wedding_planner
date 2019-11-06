@@ -3,22 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title><%=guests.name%></title>
-      <style>
       <% if (guests.rsvp === "I'm in!") {%>
-            .RSVP {
-              color: green;
-            }
+        <style> .RSVP<%=guests.id%> { color: green;} </style>
       <% } else if (guests.rsvp === "Sadly I can't make it") { %>
-            .RSVP {
-              color: red;
-            }
+        <style> .RSVP<%=guests.id%> { color: red;} </style>
+      <% } else if (guests.rsvp === "Not sure yet") { %>
+        <style> .RSVP<%=guests.id%> { color: blue;} </style>
       <% } %>
-      </style>
   </head>
+
   <body>
     <h1><%=guests.name%></h1>
     +1: <%=guests.plusOne%><br>
-    RSVP: <span class="RSVP"> <%=guests.rsvp%> </span><br>
+    RSVP: <span class="RSVP<%=guests.id%>"> <%=guests.rsvp%> </span><br>
     Category: <%=guests.category%><br>
 
     <a href="/guests/<%=guests.id%>/edit">Edit</a><br>

@@ -1,3 +1,7 @@
 .GUESTS {
   border: 1px solid black;
 }
+
+.GUESTS > a {
+  color: orange;
+}
