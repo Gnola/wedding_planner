@@ -4,8 +4,9 @@ const mongoose = require('mongoose');
 
 const guestSchema = new mongoose.Schema ({
   name: {type:String, required: true},
-  plusOne: String,
-  rsvp: String
+  plusOne: {type:String, default: 'None'},
+  rsvp: {type:String, default: 'Not sure yet'},
+  category: {type:String, default: 'None'}
 })
 
 const Guest = mongoose.model('Guest', guestSchema);

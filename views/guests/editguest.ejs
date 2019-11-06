@@ -10,22 +10,29 @@
       Name: <input type="text" name="name" value="<%=guests.name%>"><br>
       +1: <input type="text" name="plusOne" value="<%=guests.plusOne%>"><br>
       RSVP: <%=guests.rsvp%><br>
-      <input type="radio" name="rsvp" value="I'm in!"
-        <% if (guests.rsvp === "I'm in!") { %>
-          checked
-        <% } %>
-      > Im in!<br>
-      <input type="radio" name="rsvp" value="Sadly I can't make it"
-        <% if (guests.rsvp === "Sadly I can't make it") { %>
-          checked
-        <% } %>
-      > Sadly I can't make it <br>
-      <input type="radio" name="rsvp" value="Not sure yet"
-        <% if (guests.rsvp === "Not sure yet") { %>
-          checked
-        <% } %>
-      > Not sure yet <br>
-      <input type="submit" name="" value="Submit Changes">
+        <input type="radio" name="rsvp" value="I'm in!"
+          <% if (guests.rsvp === "I'm in!") { %>
+            checked
+          <% } %>
+        > Im in!<br>
+        <input type="radio" name="rsvp" value="Sadly I can't make it"
+          <% if (guests.rsvp === "Sadly I can't make it") { %>
+            checked
+          <% } %>
+        > Sadly I can't make it <br>
+        <input type="radio" name="rsvp" value="Not sure yet"
+          <% if (guests.rsvp === "Not sure yet") { %>
+            checked
+          <% } %>
+        > Not sure yet <br>
+      Category: <%=guests.category%><br>
+        <select name="category">
+          <option value="Family">Family</option>
+          <option value="Friends">Friends</option>
+          <option value="Other">Other</option>
+        </select><br>
+      <input type="submit" name="" value="Submit Changes"><br>
+      <a href="/guests/<%=guests.id%>">Cancel</a>
     </form>
   </body>
 </html>

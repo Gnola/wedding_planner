@@ -17,11 +17,9 @@
   </head>
   <body>
     <h1><%=guests.name%></h1>
-    +1: <%=guests.plusOne%></h2><br>
-    RSVP:
-    <div class="RSVP">
-      <%=guests.rsvp%>
-    </div><br>
+    +1: <%=guests.plusOne%><br>
+    RSVP: <span class="RSVP"> <%=guests.rsvp%> </span><br>
+    Category: <%=guests.category%><br>
 
     <a href="/guests/<%=guests.id%>/edit">Edit</a><br>
     <a href="/guests">HOME</a>

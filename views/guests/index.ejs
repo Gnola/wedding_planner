@@ -3,6 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Home</title>
+    <link rel="stylesheet" href="/index.css">
+    <% for (let i = 0; i < guests.length; i++) { %>
+      <% if (guests[i].rsvp === "I'm in!") { %>
+        <style> .RSVP<%=guests[i].id%> { color: green;} </style>
+      <% } else if (guests[i].rsvp === "Sadly I can't make it") { %>
+        <style> .RSVP<%=guests[i].id%> { color: red;} </style>
+      <% } else if (guests[i].rsvp === "Not sure yet") {%>
+        <style> .RSVP<%=guests[i].id%> { color: blue;} </style>
+      <% } %>
+    <% } %>  
   </head>
   <body>
     <!-- HEADER -->
@@ -26,6 +36,9 @@
         <!-- GUESTS -->
         <div class="GUESTS">
           <a href="/guests/<%=guests[i].id%>"><%=guests[i].name%></a><br>
+          +1: <%=guests[i].plusOne%><br>
+          RSVP: <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
+          Category: <%=guests[i].category%><br>
             <!-- EDIT Guest -->
           <a href="/guests/<%=guests[i].id%>/edit">Edit</a><br>
             <!-- DELETE Guest -->
