@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Home</title>
+  <!-- CSS -->
     <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+  <!-- JS -->
     <% for (let i = 0; i < guests.length; i++) { %>
       <% if (guests[i].rsvp === "I'm in!") { %>
         <style> .RSVP<%=guests[i].id%> { color: green;} </style>
@@ -14,45 +18,54 @@
       <% } %>
     <% } %>
   </head>
-  
+
   <body>
-    <!-- HEADER -->
     <div class="HEADER">
-      <h1>Wedding Guest List</h1>
-      <!-- QUICK GUEST ADD -->
-      <div class="QUICK-ADD">
-        <h3>Quick Add</h3>
-        <form action="/guests" method="POST">
-          Name: <input type="text" name="name"><br>
-          <input type="submit" value="Add Guest">
-        </form>
-      </div>
       <!-- Log Out -->
-      <a href="/logout">Log Out</a>
-    </div><br>
+        <a class="button" href="/logout">Log Out</a>
+      <!-- Title -->
+        <h1>Wedding Guest List</h1>
+      <!-- QUICK GUEST ADD -->
+        <div class="QUICK-ADD">
+          <h5>Quick Add</h5>
+          <form action="/guests" method="POST">
+            Name: <input type="text" name="name">
+            <input class="button button-primary" type="submit" value="Add Guest">
+          </form>
+        </div>
+    </div>
+
+
+
+
 
     <!-- GUEST LIST -->
     <div class="GUESTLIST">
       <% for (let i = 0; i < guests.length; i++) { %>
         <!-- GUESTS -->
         <div class="GUESTS">
-          <a href="/guests/<%=guests[i].id%>"><%=guests[i].name%></a><br>
-          +1: <%=guests[i].plusOne%><br>
-          RSVP: <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
-          Category: <%=guests[i].category%><br>
-            <!-- EDIT Guest -->
-          <a href="/guests/<%=guests[i].id%>/edit">Edit</a><br>
-            <!-- DELETE Guest -->
-          <form class="" action="/guests/<%=guests[i].id%>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE">
-          </form> <br>
+          <div class="INFO">
+            <h4><a href="/guests/<%=guests[i].id%>"><%=guests[i].name%></a></h4>
+            <strong>+1:</strong>  <%=guests[i].plusOne%><br>
+            <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
+            <strong>Category:</strong> <%=guests[i].category%>
+          </div>
+          <div class="BUTTONS">
+              <!-- EDIT -->
+            <a class="button" href="/guests/<%=guests[i].id%>/edit">Edit</a>
+              <!-- DELETE -->
+            <form class="" action="/guests/<%=guests[i].id%>?_method=DELETE" method="POST">
+              <input type="submit" value="DELETE">
+            </form> <br>
+          </div>
+
         </div>
       <% } %>
     </div>
 
     <div class="BOTTOM">
       <!-- NEW Guest -->
-      <a href="/guests/new">Create New</a><br>
+      <a class="button button-primary" href="/guests/new">Create New</a><br>
     </div>
 
   </body>

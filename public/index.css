@@ -1,7 +1,55 @@
-.GUESTS {
-  border: 1px solid black;
+.HEADER {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 10px 0 10px;
 }
 
-.GUESTS > a {
-  color: orange;
+
+.QUICK-ADD {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0;
+}
+  .QUICK-ADD > form {
+    margin: 0 4px;
+  }
+
+.GUESTLIST {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  max-height: 1000px;
+}
+
+.GUESTS {
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 450px;
+  max-width: 600px;
+  height: 150px;
+  max-height: 150px;
+  margin: 10px 0;
+}
+
+  .GUESTS > .BUTTONS {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .GUESTS > .INFO {
+    margin-bottom: 5px;
+  }
+
+.BOTTOM {
+  text-align: center;
+  margin-top: 15px;
 }
