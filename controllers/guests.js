@@ -4,19 +4,19 @@ const Guest = require('../models/guests.js') // use guestSchema from /models/gue
 
 
 // NEW GUEST
-router.get('/new', (req, res) => {
-  res.render('guests/newguest.ejs')
+router.get('/new', (req, res) => { // clicked CREATE NEW from HOMEPAGE
+  res.render('guests/newguest.ejs') // NEW GUEST PAGE
 })
 
 // CREATE (POST) GUEST
 router.post('/', (req, res) => {
-  Guest.create(
-    req.body,
-    (err, createdGuest) => {
-      res.redirect('/guests')
+  Guest.create( // create a GUEST using the schema from MODELS/GUESTS.JS
+    req.body, // get info from req.body
+    (err, createdGuest) => { // then..
+      res.redirect('/guests') // send them back to the HOMEPAGE
     }
   )
-})
+}) // GUEST IS NOW STORED IN GUESTS COLLECTION AND DISPLAYS ON HOMEPAGE
 
 
 // INDEX (HOME)

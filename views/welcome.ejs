@@ -7,15 +7,28 @@
   <body>
     <!-- Sign Up or Log in -->
     <h1>Welcome</h1>
-    <ul>
-      <li>
-        <!-- When clicked... send to NEWUSER.EJS at /new -->
-        <a href="/users/new">Sign Up</a>
+    <!-- <ul>
+      <li> -->
+        <!-- Sends to USERS/NEWUSER.EJS -->
+        <!-- <a href="/users/new">Sign Up</a>
       </li>
-      <li>
-        <!-- When clicked... send to NEWSESSION.EJS at /new -->
-        <a href="/sessions/new">Log In</a>
+      <li> -->
+        <!-- Sends to SESSIONS/NEWSESSION.EJS -->
+        <!-- <a href="/sessions/new">Log In</a>
       </li>
-    </ul>
+    </ul> -->
+    <h2>Sign Up</h2>
+    <!-- Submit user UN and PW to MODELS/USERS.JS and use userSchema to create req.body -->
+    <form class="" action="/users" method="post">
+      Username: <input type="text" name="username" value=""><br>
+      Password: <input type="password" name="password" value=""><br>
+      <input type="submit" name="" value="Register">
+    </form>
+    <h2>Log In</h2>
+    <form action="/sessions" method="POST">
+      Username: <input type="text" name="username"><br>
+      Password: <input type="password" name="password"><br>
+      <input type="submit" value="Log In">
+    </form>
   </body>
 </html>

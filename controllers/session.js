@@ -3,31 +3,27 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/users.js')
 
-router.get('/new', (req, res) => { // USER clicked LOG IN on WELCOME SCREEN
-  res.render('sessions/newsession.ejs') // LOG IN SCREEN
+router.get('/new', (req, res) => { // user clicked LOG IN on WELCOME SCREEN
+  res.render('sessions/newsession.ejs') // LOG IN PAGE
 })
 
-router.post('/', (req, res) => { // USER click LOG IN on /sessions/new
-  // res.send('creating session')
-  User.findOne( // find a user from the DB
-    { username: req.body.username }, // find by their username
+router.post('/', (req, res) => { // user clicked LOG IN on LOG IN PAGE
+  User.findOne( // find a user from the DB...
+    { username: req.body.username }, // by their username
     (err, foundUser) => { // then...
-      if (foundUser === null) { //
-        res.redirect('/sessions/new')
-      } else {
-          const doesPasswordMatch = bcrypt.compareSync(req.body.password, foundUser.password)
-          if (doesPasswordMatch) {
-            req.session.username = foundUser.username
-            res.redirect('/guests')
-            // res.send('password matches')
-            // console.log(foundUser);
-          } else {
-            // res.send('nope')
-            res.redirect('/sessions/new')
+      if (foundUser === null) { // if there is NOT a matching USER
+        res.redirect('/sessions/new') // keep them at the LOG IN PAGE
+      } else { // otherwise
+          const doesPasswordMatch = bcrypt.compareSync(req.body.password, foundUser.password) // check to see if the PWs match
+          if (doesPasswordMatch) { // if they DO MATCH
+            req.session.username = foundUser.username // set the session username as the username of the user logging in
+            res.redirect('/guests') // then sent them to the home page
+          } else { // if they DONT MATCH
+            res.redirect('/sessions/new') // keep them at the LOG IN PAGE
           }
       }
     }
   )
-})
+}) // USER CAN LOG IN
 
 module.exports = router;
