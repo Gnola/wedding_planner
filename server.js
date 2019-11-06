@@ -55,6 +55,15 @@ app.get('/get', (req, res) => {
   res.send(req.session.username)
 })
 
+app.get('/logout', (req, res)=>{
+	req.session.destroy((err)=>{
+		if(err){
+			res.redirect('/guests')
+		} else {
+      res.redirect('/')
+		}
+	});
+});
 
 
 
