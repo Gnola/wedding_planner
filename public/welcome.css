@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+}
+.FORM > h2 {
+  text-align: center;
+}
+.WELCOME {
+  display: flex;
+  justify-content: center;
+}
+.FORM {
+  border: 1px solid black;
+  width: 400px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.FORM > form {
+  display: flex;
+  justify-content: center;
+}
+
+.BUTTONS {
+  display: flex;
+  justify-content: center;
+}
