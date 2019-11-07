@@ -33,6 +33,9 @@ app.use('/users', userController)
 const sessionController = require('./controllers/session.js') // USERS
 app.use('/sessions', sessionController)
 
+const searchController = require('./controllers/search.js') // FIND GUESTS
+app.use('/search', searchController)
+
 
 
 // ROUTES //
