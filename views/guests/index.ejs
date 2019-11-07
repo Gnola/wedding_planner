@@ -20,14 +20,14 @@
   </head>
 
   <body>
+  <!-- HEADER -->
     <div class="HEADER">
       <!-- Title -->
         <h1>Wedding Guest List</h1>
       <!-- Log Out -->
         <a class="button" href="/logout">Log Out</a>
     </div>
-
-    <!-- QUICK GUEST ADD -->
+  <!-- QUICK GUEST ADD -->
     <div class="QUICK-ADD">
       <h4>Quick Add</h4>
       <form action="/guests" method="POST">
@@ -51,8 +51,26 @@
         </div>
       </form>
     </div>
-
-    <!-- GUEST LIST -->
+  <!-- GUEST COUNT -->
+    <div class="COUNT">
+    <% let guestsIn = [] %>
+    <% let guestsOut = [] %>
+    <% let guestsNotSure = [] %>
+    <% for (var i = 0; i < guests.length; i++) {%>
+      <%  if (guests[i].rsvp === "I'm in!") { %>
+            <% guestsIn.push(guests[i]) %>
+       <% } else if (guests[i].rsvp === "Sadly I can't make it") { %>
+            <% guestsOut.push(guests[i]) %>
+       <% } else if (guests[i].rsvp === "Not sure yet") { %>
+            <% guestsNotSure.push(guests[i]) %>
+       <% } %>
+    <% } %>
+    <span><strong>Total:</strong> <%=guests.length%></span>
+    <span id="going"><strong>Going:</strong> <%=guestsIn.length%></span>
+    <span id="notgoing"><strong>Not Going:</strong> <%=guestsOut.length%></span>
+    <span id="undecided"><strong>Undecided:</strong> <%=guestsNotSure.length%></span>
+    </div>
+  <!-- GUEST LIST -->
     <div class="GUESTLIST">
       <% for (let i = 0; i < guests.length; i++) { %>
         <!-- GUESTS -->

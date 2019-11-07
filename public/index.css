@@ -20,6 +20,24 @@
     margin: 0 4px;
   }
 
+.COUNT {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#going {
+  color: green;
+}
+
+#notgoing {
+  color: red;
+}
+
+#undecided {
+  color: blue;
+}
+
 .GUESTLIST {
   display: flex;
   flex-direction: column;

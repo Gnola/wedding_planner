@@ -25,6 +25,7 @@ router.get('/', (req, res) => {
     Guest.find(
       {},
       (err, allGuests) => {
+        console.log(allGuests);
         res.render(
           'guests/index.ejs',
           {
@@ -35,6 +36,17 @@ router.get('/', (req, res) => {
       }
     )
   }
+})
+
+
+// COUNTS AND SEND CORRECT INFO BUT WANT TO PUT ON INDEX PAGE
+router.get('/count', (req, res) => {
+  Guest.countDocuments(
+    {rsvp:"I'm in!"},
+    (err, data) => {
+      // console.log(`There are ${data} guests who are in!`)
+      res.send(`There are ${data} guests who are in!`)
+  })
 })
 
 
@@ -89,5 +101,6 @@ router.put('/:id', (req, res) => {
     }
   )
 })
+
 
 module.exports = router
