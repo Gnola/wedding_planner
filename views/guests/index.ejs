@@ -34,11 +34,21 @@
         <div class="row">
           Name: <input type="text" name="name">
           +1: <input type="text" name="plusOne">
-          RSVP: <input type="text" name="rsvp">
-          Category: <input type="text" name="category">
-          <input class="button button-primary" type="submit" value="Add Guest">
+          RSVP:
+            <select name="rsvp">
+              <option value="Not sure yet">Not sure yet</option>
+              <option value="I'm in!">I'm in!</option>
+              <option value="Sadly I can't make it">Sadly I can't make it</option>
+            </select>
+          Category:
+            <select name="category">
+              <option value="None">None</option>
+              <option value="Family">Family</option>
+              <option value="Friends">Friends</option>
+              <option value="Other">Other</option>
+            </select>
+            <input class="button button-primary" type="submit" value="Add Guest">
         </div>
-
       </form>
     </div>
 
@@ -46,9 +56,9 @@
     <div class="GUESTLIST">
       <% for (let i = 0; i < guests.length; i++) { %>
         <!-- GUESTS -->
-        <div class="GUESTS">
+        <div class="GUESTS" onclick="location.href='/guests/<%=guests[i].id%>';" style="cursor: pointer;">
           <div class="INFO">
-            <h4><a href="/guests/<%=guests[i].id%>"><%=guests[i].name%></a></h4>
+            <h4><%=guests[i].name%></h4>
             <strong>+1:</strong>  <%=guests[i].plusOne%><br>
             <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
             <strong>Category:</strong> <%=guests[i].category%>

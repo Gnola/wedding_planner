@@ -38,8 +38,14 @@
           > Not sure yet <br>
           </div>
           <div class="six columns">
-        <strong>Category:</strong> <%=guests.category%><br>
+        <strong>Category:</strong>
+        <% if (guests.category === 'None') { %>
+
+        <% } else { %>
+          <%=guests.category%><br>
+        <% } %>
           <select class="u-full-width"name="category">
+            <option value="None">None</option>
             <option value="Family">Family</option>
             <option value="Friends">Friends</option>
             <option value="Other">Other</option>
