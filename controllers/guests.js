@@ -25,7 +25,6 @@ router.get('/', (req, res) => {
     Guest.find(
       {},
       (err, allGuests) => {
-        console.log(allGuests);
         res.render(
           'guests/index.ejs',
           {

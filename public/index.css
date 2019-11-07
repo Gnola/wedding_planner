@@ -22,8 +22,9 @@
 
 .COUNT {
   border: 1px solid black;
-  display: flex;
-  justify-content: space-evenly;
+  /* display: flex;
+  justify-content: space-evenly; */
+  text-align: center;
 }
 
 #going {
@@ -38,14 +39,33 @@
   color: blue;
 }
 
-.GUESTLIST {
+/* OG GUESTLIST */
+/* .GUESTLIST {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   margin: auto;
   max-height: 800px;
+} */
+
+/* NEW GUESTLIST */
+.GUESTLIST {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: auto;
 }
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  text-align: center;
+}
+/* END OF NEW GUESTLIST */
 
 .GUESTS {
   border: 1px solid black;
@@ -70,12 +90,12 @@
     margin-bottom: 5px;
   }
 
+  .BUTTONS {
+    display: flex;
+    justify-content: center;
+  }
+
 .BOTTOM {
   text-align: center;
-  margin-top: 15px;
-}
-
-.BUTTONS {
-  display: flex;
-  justify-content: center;
+  margin: 15px;
 }
