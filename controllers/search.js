@@ -6,16 +6,18 @@ const Guest = require('../models/guests.js') // use guestSchema from /models/gue
 // NEED TO FIGURE OUT HOW TO DO SOMETHING IF SEARCH DOESNT MATCH
 // FIND
 router.post('/', (req, res) => {
-  // res.send('hey there')
   Guest.findOne(
     // {},
     {name:req.body.name},
     (err, foundGuest) => {
-      console.log(req.body);
-      res.render(
-        'guests/foundguest.ejs',
-        { guests: foundGuest}
-      )
+      if (foundGuest === null) {
+        res.redirect('/')
+      } else {
+        res.render(
+          'guests/foundguest.ejs',
+          { guests: foundGuest}
+        )
+      }
     }
   )
 })

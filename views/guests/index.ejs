@@ -70,14 +70,15 @@
     </div>
   <!-- GUEST COUNT -->
     <div class="COUNT">
-      <span><strong>Total Guests:</strong> <%=guests.length%> + <%=guestsPlusOne.length%> </span>
+      <% let sum = (guests.length + guestsPlusOne.length) %>
+      <span><strong>Total Guests:</strong> <%=sum%> </span>
       <span><strong>Guests:</strong> <%=guests.length%></span>
       <span><strong>Plus Ones:</strong> <%=guestsPlusOne.length%></span>
     </div>
   <!-- GUEST LIST -->
     <div class="GUESTLIST">
       <!-- GOING -->
-      <ul> <span id="going"><strong>Going:</strong> <%=guestsIn.length%></span>
+      <ul> <span id="going"><strong>Going:</strong><br> <%=guestsIn.length%></span>
         <% for (let i = 0; i < guests.length; i++) { %>
           <% if (guests[i].rsvp === "I'm in!") { %>
           <li>
@@ -102,7 +103,7 @@
         <% } %>
       </ul>
       <!-- NOT GOING -->
-      <ul> <span id="notgoing"><strong>Not Going:</strong> <%=guestsOut.length%></span>
+      <ul> <span id="notgoing"><strong>Not Going:</strong><br> <%=guestsOut.length%></span>
         <% for (let i = 0; i < guests.length; i++) { %>
           <% if (guests[i].rsvp === "Sadly I can't make it") { %>
           <li>
@@ -127,7 +128,7 @@
         <% } %>
       </ul>
       <!-- UNDECIDED -->
-      <ul> <span id="undecided"><strong>Undecided:</strong> <%=guestsNotSure.length%></span>
+      <ul> <span id="undecided"><strong>Undecided:</strong><br> <%=guestsNotSure.length%></span>
         <% for (let i = 0; i < guests.length; i++) { %>
           <% if (guests[i].rsvp === "Not sure yet") { %>
           <li>
