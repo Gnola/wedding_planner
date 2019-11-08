@@ -2,17 +2,17 @@
   color: green;
 }
 .GUESTS {
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 3px;
-  box-shadow: 2px 2px 2px;
+  box-shadow: 3px 4px 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 350px;
-  max-width: 350px;
-  height: 600px;
-  max-height: 600px; */
+  /* width: 350px; */
+  max-width: 550px;
+  /* height: 580px; */
+  /* max-height: 580px; */
   margin: 10px auto;
 }
 
@@ -20,11 +20,20 @@
   text-align: center;
   margin-top: 10px;
 }
+form > h5 {
+  text-align: center;
+}
 
 .row {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.rows1 {
+  margin-right: 20px;
+}
+.rows2 {
+  margin-right: 50px;
 }
 
 
