@@ -59,10 +59,9 @@
             </select>
           Category:
             <select name="category">
-              <option value="None">None</option>
+              <option value="Other">Other</option>
               <option value="Family">Family</option>
               <option value="Friends">Friends</option>
-              <option value="Other">Other</option>
             </select>
             <input class="button button-primary" type="submit" value="Add Guest">
         </div>
@@ -87,7 +86,8 @@
                 <h4><%=guests[i].name%></h4>
                 <strong>+1:</strong>  <%=guests[i].plusOne%><br>
                 <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
-                <strong>Category:</strong> <%=guests[i].category%>
+                <strong>Category:</strong> <%=guests[i].category%><br>
+                <strong>Invited:</strong> <%=guests[i].invited%>
               </div>
               <div class="BUTTONS">
                   <!-- EDIT -->
@@ -112,7 +112,8 @@
                 <h4><%=guests[i].name%></h4>
                 <strong>+1:</strong>  <%=guests[i].plusOne%><br>
                 <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
-                <strong>Category:</strong> <%=guests[i].category%>
+                <strong>Category:</strong> <%=guests[i].category%><br>
+                <strong>Invited:</strong> <%=guests[i].invited%>
               </div>
               <div class="BUTTONS">
                   <!-- EDIT -->
@@ -137,7 +138,8 @@
                 <h4><%=guests[i].name%></h4>
                 <strong>+1:</strong>  <%=guests[i].plusOne%><br>
                 <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
-                <strong>Category:</strong> <%=guests[i].category%>
+                <strong>Category:</strong> <%=guests[i].category%><br>
+                <strong>Invited:</strong> <%=guests[i].invited%>
               </div>
               <div class="BUTTONS">
                   <!-- EDIT -->

@@ -32,15 +32,17 @@
           </select><br><br>
         <strong>Category:</strong> <br>
           <select name="category">
-            <option value="None">None</option>
+            <option value="Other">Other</option>
             <option value="Family">Family</option>
             <option value="Friends">Friends</option>
-            <option value="Other">Other</option>
           </select><br><br>
-          <div class="BUTTONS">
-            <input class="button button-primary" type="submit" value="Add Guest">
-            <a class="button" href="/guests">Cancel</a>
-          </div>
+        <strong>Invited:</strong> <br>
+          <input type="radio" name="invited" value="Yes"> Yes
+          <input type="radio" name="invited" value="No"> No
+        <div class="BUTTONS">
+          <input class="button button-primary" type="submit" value="Add Guest">
+          <a class="button" href="/guests">Cancel</a>
+        </div>
       </form>
     </div>
   </body>

@@ -13,6 +13,8 @@ router.post('/', (req, res) => {
   Guest.create( // create a GUEST using the schema from MODELS/GUESTS.JS
     req.body, // get info from req.body
     (err, createdGuest) => { // then..
+      console.log(createdGuest);
+      console.log(req.body);
       res.redirect('/guests') // send them back to the HOMEPAGE
     }
   )
