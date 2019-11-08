@@ -15,22 +15,32 @@
         <div class="row">
           <strong>Name:</strong> <input type="text" name="name">
           <strong>+1:</strong> <input type="text" name="plusOne">
+          <strong>Email:</strong> <input type="email" name="email">
+          <strong>Phone:</strong> <input type="tel" name="phone">
+        </div>
+        <div class="row"> <strong>Address:</strong>
+          <strong>Street:</strong> <input type="text" name="street">
+          <strong>City:</strong> <input type="text" name="city">
+          <strong>State:</strong> <input type="text" name="state">
+          <strong>Zip:</strong> <input type="text" name="zip">
         </div>
         <strong>RSVP:</strong> <br>
-            <input type="radio" name="rsvp" value="I'm in!"> Im in!<br>
-            <input type="radio" name="rsvp" value="Sadly I can't make it"> Sadly I can't make it <br>
-            <input type="radio" name="rsvp" value="Not sure yet"> Not sure yet <br><br>
-          <strong>Category:</strong> <br>
-            <select name="category">
-              <option value="None">None</option>
-              <option value="Family">Family</option>
-              <option value="Friends">Friends</option>
-              <option value="Other">Other</option>
-            </select><br><br>
-            <div class="BUTTONS">
-              <input class="button button-primary" type="submit" value="Add Guest">
-              <a class="button" href="/guests">Cancel</a>
-            </div>
+          <select name="rsvp">
+            <option value="Not sure yet">Not sure yet</option>
+            <option value="I'm in!">I'm in!</option>
+            <option value="Sadly I can't make it">Sadly I can't make it</option>
+          </select><br><br>
+        <strong>Category:</strong> <br>
+          <select name="category">
+            <option value="None">None</option>
+            <option value="Family">Family</option>
+            <option value="Friends">Friends</option>
+            <option value="Other">Other</option>
+          </select><br><br>
+          <div class="BUTTONS">
+            <input class="button button-primary" type="submit" value="Add Guest">
+            <a class="button" href="/guests">Cancel</a>
+          </div>
       </form>
     </div>
   </body>

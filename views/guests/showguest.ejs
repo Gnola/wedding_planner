@@ -22,6 +22,10 @@
         <strong>+1:</strong> <%=guests.plusOne%><br><br>
         <strong>RSVP:</strong> <span class="RSVP<%=guests.id%>"> <%=guests.rsvp%> </span><br><br>
         <strong>Category:</strong> <%=guests.category%><br><br>
+        <strong>Email:</strong> <%=guests.email%><br>
+        <strong>Phone:</strong> <%=guests.phone%><br>
+        <strong>Address:</strong><br>
+          <%=guests.street%>, <%=guests.city%>, <%=guests.state%> <%=guests.zip%> <br>
       </div>
       <div class="BUTTONS">
         <a class="button button-primary" href="/guests/<%=guests.id%>/edit">Edit</a>
