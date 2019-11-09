@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/skeleton.css">
   </head>
   <body>
-    <!-- Sign Up or Log in -->
     <h1>Welcome</h1>
     <div class="WELCOME">
       <div class="FORM">
@@ -39,16 +38,14 @@
       </div>
       <div class="SEARCH">
         <h2>Guest Search</h2>
-        <p>Search your name and update your info!</p>
-        <!-- Submit user UN and PW to MODELS/USERS.JS and use userSchema to create req.body -->
+        <p>Use your first name and last initial to update your info!</p>
         <form action="/search" method="post">
-            Your Name: <input type="text" name="name"><br>
+            Name: <input type="text" name="name" placeholder="ex. Gianni N"><br>
             <div class="BUTTONS">
               <input class="button button-primary"type="submit" name="" value="Find">
             </div>
         </form>
       </div>
     </div>
-
   </body>
 </html>

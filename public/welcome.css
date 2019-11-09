@@ -38,3 +38,11 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 1000px) {
+  .FORM {
+    border: 1px solid black;
+    align-items: center;
+  }
+  }
+}

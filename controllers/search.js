@@ -3,7 +3,6 @@ const router = express.Router();
 const Guest = require('../models/guests.js') // use guestSchema from /models/guests.js
 
 
-// NEED TO FIGURE OUT HOW TO DO SOMETHING IF SEARCH DOESNT MATCH
 // FIND
 router.post('/', (req, res) => {
   Guest.findOne(
