@@ -4,16 +4,20 @@
     <meta charset="utf-8">
     <title><%=items.service%></title>
     <% include ../partials/skeletonhead.ejs %>
+    <link rel="stylesheet" href="/items.css">
+    <% if (items.paid === "Yes") {%>
+      <style> .paid<%=items.id%> { color: green;} </style>
+    <% } else if (items.paid === "No") { %>
+      <style> .paid<%=items.id%> { color: red;} </style>
+    <% } %>
   </head>
   <body>
     <div class="ITEMS">
-      <div class="NAME">
         <h1><%=items.service%></h1>
-        <h5>Price: <strong>$<%=items.price%></strong></h5>
-      </div>
       <div class="INFO">
-        <h5>Paid: <span class="invited"> <%=items.paid%></span></h5>
-        <h5>Notes: <span class="RSVP<%=items.id%>"> <%=items.notes%> </span></h5>
+        <h5>Price: <strong>$<%=items.price%></strong></h5>
+        <h5>Paid: <span class="paid<%=items.id%>"> <%=items.paid%></span></h5>
+        <h5>Notes: <%=items.notes%> </h5>
       </div>
       <div class="BUTTONS">
         <a class="button button-primary" href="/items/<%=items.id%>/edit">Edit</a>

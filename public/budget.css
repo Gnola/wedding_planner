@@ -49,7 +49,7 @@ ul {
   margin: 10px 0;
 }
 
-  .GUESTS > .BUTTONS {
+  .ITEMS > .BUTTONS {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
@@ -67,6 +67,10 @@ ul {
   }
 
 .BOTTOM {
+  text-align: center;
+  margin: 15px;
+}
+.TOTAL {
   text-align: center;
   margin: 15px;
 }

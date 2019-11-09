@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Edit <%=items.name%></title>
     <% include ../partials/skeletonhead.ejs %>
+    <link rel="stylesheet" href="/items.css">
   </head>
   <body>
     <div class="ITEMS">
@@ -23,7 +24,7 @@
             <% } else if (items.paid === 'No') { %>
               <input type="radio" name="paid" value="Yes"> Yes
               <input type="radio" name="paid" value="No" checked> No
-            <% } %> </span> <br>
+            <% } %> </span>
         </div>
         <div class="row">
           Notes: <textarea name="notes" rows="8" cols="80"><%=items.notes%></textarea>
