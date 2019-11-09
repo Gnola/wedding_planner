@@ -34,3 +34,11 @@
 .category {
   font-weight: bold;
 }
+
+@media (max-width: 1000px) {
+  .GUESTS {
+    max-width: 350px;
+    margin: 50px auto;
+  }
+  }
+}

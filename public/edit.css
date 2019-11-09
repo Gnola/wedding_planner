@@ -48,3 +48,15 @@ form > h5 {
   flex-direction: column;
   align-items: center;
 }
+
+@media (max-width: 1000px) {
+  .GUESTS {
+    max-width: 350px;
+    margin: auto;
+  }
+  .GUESTS > form {
+    display: flex;
+    flex-direction: column;
+  }
+  }
+}

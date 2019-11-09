@@ -113,3 +113,17 @@ ul {
   text-align: center;
   margin: 15px;
 }
+
+@media (max-width: 1000px) {
+  .QUICKADD {
+    margin: auto;
+  }
+  .GUESTS {
+    max-width: 350px;
+    margin: auto;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+}
