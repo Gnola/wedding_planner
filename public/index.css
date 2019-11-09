@@ -20,11 +20,22 @@
     margin: 0 4px;
   }
 
-.COUNT {
+.GUESTCOUNT {
   border: 1px solid black;
-  /* display: flex;
-  justify-content: space-evenly; */
+  max-width: 500px;
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
+  margin: 15px auto;
+}
+
+.INVITECOUNT {
+  border: 1px solid black;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 15px auto;
 }
 
 #going {

@@ -34,8 +34,25 @@
             <% guestsPlusOne.push(guests[i]) %>
       <% } %>
     <% } %>
+    <!-- INVITED Color -->
+    <% for (let i = 0; i < guests.length; i++) { %>
+      <% if (guests[i].invited === "Yes") {%>
+        <style> .invited<%=guests[i].id%> { color: green;} </style>
+        <% } else if (guests[i].invited === "No") { %>
+          <style> .invited<%=guests[i].id%> { color: red;} </style>
+        <% } %>
+    <% } %>
+    <!-- INVITE COUNT -->
+    <% let invited = []; %>
+    <% let notInvited = []; %>
+    <% for (var i = 0; i < guests.length; i++) { %>
+      <% if (guests[i].invited === 'Yes') { %>
+        <%invited.push(guests[i])%>
+      <% } else if (guests[i].invited === 'No') { %>
+        <%notInvited.push(guests[i])%>
+      <% } %>
+    <% } %>
   </head>
-
   <body>
   <!-- HEADER -->
     <div class="HEADER">
@@ -67,8 +84,13 @@
         </div>
       </form>
     </div>
+    <!-- INVITE COUNT -->
+    <div class="INVITECOUNT">
+      <span><strong>Sent:</strong> <%=invited.length%> </span>
+      <span><strong>Still to send:</strong> <%=notInvited.length%> </span>
+    </div>
   <!-- GUEST COUNT -->
-    <div class="COUNT">
+    <div class="GUESTCOUNT">
       <% let sum = (guests.length + guestsPlusOne.length) %>
       <span><strong>Total Guests:</strong> <%=sum%> </span>
       <span><strong>Guests:</strong> <%=guests.length%></span>
@@ -77,7 +99,7 @@
   <!-- GUEST LIST -->
     <div class="GUESTLIST">
       <!-- GOING -->
-      <ul> <span id="going"><strong>Going:</strong><br> <%=guestsIn.length%></span>
+      <ul> <span id="going"><h5>Going: <%=guestsIn.length%></h5></span>
         <% for (let i = 0; i < guests.length; i++) { %>
           <% if (guests[i].rsvp === "I'm in!") { %>
           <li>
@@ -85,9 +107,8 @@
               <div class="INFO">
                 <h4><%=guests[i].name%></h4>
                 <strong>+1:</strong>  <%=guests[i].plusOne%><br>
+                <strong>Invited:</strong><span class="invited<%=guests[i].id%>"> <%=guests[i].invited%> </span> <br>
                 <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
-                <strong>Category:</strong> <%=guests[i].category%><br>
-                <strong>Invited:</strong> <%=guests[i].invited%>
               </div>
               <div class="BUTTONS">
                   <!-- EDIT -->
@@ -103,7 +124,7 @@
         <% } %>
       </ul>
       <!-- NOT GOING -->
-      <ul> <span id="notgoing"><strong>Not Going:</strong><br> <%=guestsOut.length%></span>
+      <ul> <span id="notgoing"><h5>Not Going: <%=guestsOut.length%></h5></span>
         <% for (let i = 0; i < guests.length; i++) { %>
           <% if (guests[i].rsvp === "Sadly I can't make it") { %>
           <li>
@@ -111,9 +132,8 @@
               <div class="INFO">
                 <h4><%=guests[i].name%></h4>
                 <strong>+1:</strong>  <%=guests[i].plusOne%><br>
+                <strong>Invited:</strong><span class="invited<%=guests[i].id%>"> <%=guests[i].invited%> </span> <br>
                 <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
-                <strong>Category:</strong> <%=guests[i].category%><br>
-                <strong>Invited:</strong> <%=guests[i].invited%>
               </div>
               <div class="BUTTONS">
                   <!-- EDIT -->
@@ -129,7 +149,7 @@
         <% } %>
       </ul>
       <!-- UNDECIDED -->
-      <ul> <span id="undecided"><strong>Undecided:</strong><br> <%=guestsNotSure.length%></span>
+      <ul> <span id="undecided"><h5>Undecided: <%=guestsNotSure.length%></h5></span>
         <% for (let i = 0; i < guests.length; i++) { %>
           <% if (guests[i].rsvp === "Not sure yet") { %>
           <li>
@@ -137,9 +157,8 @@
               <div class="INFO">
                 <h4><%=guests[i].name%></h4>
                 <strong>+1:</strong>  <%=guests[i].plusOne%><br>
+                <strong>Invited:</strong><span class="invited<%=guests[i].id%>"> <%=guests[i].invited%> </span> <br>
                 <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
-                <strong>Category:</strong> <%=guests[i].category%><br>
-                <strong>Invited:</strong> <%=guests[i].invited%>
               </div>
               <div class="BUTTONS">
                   <!-- EDIT -->
