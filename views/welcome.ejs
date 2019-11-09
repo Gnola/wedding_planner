@@ -12,7 +12,7 @@
     <h1>Welcome</h1>
     <div class="WELCOME">
       <div class="FORM">
-        <h2>Sign Up</h2>
+        <h2>Admin Sign Up</h2>
         <!-- Submit user UN and PW to MODELS/USERS.JS and use userSchema to create req.body -->
         <form class="" action="/users" method="post">
           <div class="six columns">
@@ -36,19 +36,18 @@
           </div>
         </form>
       </div>
+      <div class="SEARCH">
+        <h2>Guest Search</h2>
+        <p>Search your name and update your info!</p>
+        <!-- Submit user UN and PW to MODELS/USERS.JS and use userSchema to create req.body -->
+        <form action="/search" method="post">
+            Your Name: <input type="text" name="name"><br>
+            <div class="BUTTONS">
+              <input class="button button-primary"type="submit" name="" value="Find">
+            </div>
+        </form>
+      </div>
     </div>
-    <div class="FORM">
-      <h2>Guest Search</h2>
-      <p>Search your name and update your info!</p>
-      <!-- Submit user UN and PW to MODELS/USERS.JS and use userSchema to create req.body -->
-      <form class="" action="/search" method="post">
-        <div class="six columns">
-          Name: <input type="text" name="name"><br>
-          <div class="BUTTONS">
-            <input class="button button-primary"type="submit" name="" value="Find">
-          </div>
-        </div>
-      </form>
-    </div>
+
   </body>
 </html>

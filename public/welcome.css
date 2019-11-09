@@ -1,12 +1,12 @@
 h1 {
   text-align: center;
 }
-.FORM > h2 {
-  text-align: center;
-}
 .WELCOME {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  max-width: 1000px;
+  margin: auto;
 }
 .FORM {
   border: 1px solid black;
@@ -15,11 +15,24 @@ h1 {
   display: flex;
   flex-direction: column;
 }
+  .FORM > h2 {
+    text-align: center;
+  }
+  .FORM > form {
+    display: flex;
+    justify-content: center;
+  }
 
-.FORM > form {
+.SEARCH {
+  border: 1px solid black;
+  width: 400px;
+  margin: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
+  .SEARCH > form {
+  }
 
 .BUTTONS {
   display: flex;
