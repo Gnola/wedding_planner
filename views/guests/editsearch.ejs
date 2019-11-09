@@ -6,33 +6,20 @@
     <link rel="stylesheet" href="/edit.css">
   </head>
   <body>
-    <div class="HEADER">
-      <a class="button" href="/guests">Home</a>
-    </div>
     <div class="GUESTS">
       <h1>Edit <%=guests.name%></h1>
-      <form action="/guests/<%=guests.id%>?_method=PUT" method="POST">
+      <form action="/search/<%=guests.id%>?_method=PUT" method="POST">
         <span class="rows1">
           <strong>Name:</strong>  <input type="text" name="name" value="<%=guests.name%>">
         </span>
         <span class="rows1">
           <strong>+1:</strong> <input type="text" name="plusOne" value="<%=guests.plusOne%>"> <br>
         </span>
-        <div class="row">
-          <strong>Invited:</strong><span class="label-body">
-            <% if (guests.invited === 'Yes') { %>
-              <input type="radio" name="invited" value="Yes" checked> Yes
-              <input type="radio" name="invited" value="No"> No
-            <% } else if (guests.invited === 'No') { %>
-              <input type="radio" name="invited" value="Yes"> Yes
-              <input type="radio" name="invited" value="No" checked> No
-            <% } %> </span> <br>
-        </div>
         <!-- RSVP / CATEGORY / INFO -->
         <% include ../partials/editform.ejs %>
         <div class="BUTTONS">
           <input class="button button-primary" type="submit" name="" value="Submit Changes">
-          <a class="button" href="/guests/<%=guests.id%>">Cancel</a>
+          <a class="button" href="/search/<%=guests.id%>">Cancel</a>
         </div>
       </form>
     </div>

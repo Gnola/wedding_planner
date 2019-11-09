@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
         res.redirect('/')
       } else {
         res.render(
-          'guests/foundguest.ejs',
+          'guests/searchedguest.ejs',
           { guests: foundGuest}
         )
       }
@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
     req.params.id,
     (err, foundGuest) => {
       res.render(
-        'guests/foundguest.ejs',
+        'guests/searchedguest.ejs',
         { guests: foundGuest}
       )
     }
@@ -41,7 +41,7 @@ router.get('/:id/edit', (req, res) => {
     req.params.id,
     (err, foundGuest) => {
       res.render(
-        'guests/searchedit.ejs',
+        'guests/editsearch.ejs',
         {
           guests : foundGuest
         }

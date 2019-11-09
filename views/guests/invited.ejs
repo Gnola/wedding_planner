@@ -1,125 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
-  <!-- CSS -->
+    <% include ../partials/skeletonhead.ejs %>
+    <% include ../partials/conditionalcolors.ejs %>
     <link rel="stylesheet" href="/index.css">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
-  <!-- JS -->
-    <!-- RSVP Color -->
-    <% for (let i = 0; i < guests.length; i++) { %>
-      <% if (guests[i].rsvp === "I'm in!") { %>
-        <style> .RSVP<%=guests[i].id%> { color: green;} </style>
-      <% } else if (guests[i].rsvp === "Sadly I can't make it") { %>
-        <style> .RSVP<%=guests[i].id%> { color: red;} </style>
-      <% } else if (guests[i].rsvp === "Not sure yet") {%>
-        <style> .RSVP<%=guests[i].id%> { color: blue;} </style>
-      <% } %>
-    <% } %>
-    <!-- INVITED Color -->
-    <% for (let i = 0; i < guests.length; i++) { %>
-      <% if (guests[i].invited === "Yes") {%>
-        <style> .invited<%=guests[i].id%> { color: green;} </style>
-        <% } else if (guests[i].invited === "No") { %>
-          <style> .invited<%=guests[i].id%> { color: red;} </style>
-        <% } %>
-    <% } %>
-    <!-- INVITE COUNT -->
-    <% let invited = []; %>
-    <% let notInvited = []; %>
-    <% for (var i = 0; i < guests.length; i++) { %>
-      <% if (guests[i].invited === 'Yes') { %>
-        <%invited.push(guests[i])%>
-      <% } else if (guests[i].invited === 'No') { %>
-        <%notInvited.push(guests[i])%>
-      <% } %>
-    <% } %>
   </head>
   <body>
   <!-- HEADER -->
-    <div class="HEADER">
-      <!-- Title -->
-        <h1>Wedding Guest List</h1>
-      <!-- Log Out -->
-        <a class="button" href="/logout">Log Out</a>
-    </div>
+    <% include ../partials/header.ejs %>
   <!-- QUICK GUEST ADD -->
-    <div class="QUICK-ADD">
-      <h4>Quick Add</h4>
-      <form action="/guests" method="POST">
-        <div class="row">
-          Name: <input type="text" name="name">
-          +1: <input type="text" name="plusOne">
-          Invited: <span class="label-body">
-              <input type="radio" name="invited" value="Yes"> Yes
-              <input type="radio" name="invited" value="No"> No </span>
-          <input class="button button-primary" type="submit" value="Add Guest">
-        </div>
-      </form>
-    </div>
+    <% include ../partials/quickadd.ejs %>
     <div class="BOTTOM">
       <a class="button" href="/guests">Back</a><br>
     </div>
-  <!-- GUEST LIST -->
+  <!-- GUEST LIST PARTIAL -->
     <div class="GUESTLIST">
-      <!-- GOING -->
-      <ul> <span id="going"><h5>Sent: <%=invited.length%></h5></span>
-        <% for (let i = 0; i < guests.length; i++) { %>
-          <% if (guests[i].invited === "Yes") { %>
-          <li>
-            <div class="GUESTS" onclick="location.href='/guests/<%=guests[i].id%>';" style="cursor: pointer;">
-              <div class="INFO">
-                <h4><%=guests[i].name%></h4>
-                +1: <strong><%=guests[i].plusOne%></strong> <br> <br>
-                <strong>Invited:</strong><span class="invited<%=guests[i].id%>"> <%=guests[i].invited%> </span> <br>
-                <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
-              </div>
-              <div class="BUTTONS">
-                  <!-- EDIT -->
-                <a class="button" href="/guests/<%=guests[i].id%>/edit">Edit</a>
-                  <!-- DELETE -->
-                <form class="" action="/guests/<%=guests[i].id%>?_method=DELETE" method="POST">
-                  <input type="submit" value="DELETE">
-                </form> <br>
-              </div>
-            </div>
-          </li>
-          <% } %>
-        <% } %>
-      </ul>
-      <!-- NOT GOING -->
-      <ul> <span id="notgoing"><h5>Still to send: <%=notInvited.length%></h5></span>
-        <% for (let i = 0; i < guests.length; i++) { %>
-          <% if (guests[i].invited === "No") { %>
-          <li>
-            <div class="GUESTS" onclick="location.href='/guests/<%=guests[i].id%>';" style="cursor: pointer;">
-              <div class="INFO">
-                <h4><%=guests[i].name%></h4>
-                +1: <strong><%=guests[i].plusOne%></strong> <br> <br>
-                <strong>Invited:</strong><span class="invited<%=guests[i].id%>"> <%=guests[i].invited%> </span> <br>
-                <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
-              </div>
-              <div class="BUTTONS">
-                  <!-- EDIT -->
-                <a class="button" href="/guests/<%=guests[i].id%>/edit">Edit</a>
-                  <!-- DELETE -->
-                <form class="" action="/guests/<%=guests[i].id%>?_method=DELETE" method="POST">
-                  <input type="submit" value="DELETE">
-                </form> <br>
-              </div>
-            </div>
-          </li>
-          <% } %>
-        <% } %>
-      </ul>
-  </div>
-  <div class="BOTTOM">
-    <!-- NEW Guest -->
-    <a class="button button-primary" href="/guests/new">Create New</a><br>
-    <a class="button" href="/guests">Back</a><br>
-  </div>
+      <% include ../partials/invited.ejs %>
+    </div>
+  <!-- BOTTOM BUTTONS -->
+    <div class="BOTTOM">
+      <a class="button button-primary" href="/guests/new">Create New</a><br>
+    </div>
   </body>
 </html>

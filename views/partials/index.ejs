@@ -1,0 +1,105 @@
+<!-- GUEST COUNT -->
+  <% let guestsIn = [] %>
+  <% let guestsOut = [] %>
+  <% let guestsNotSure = [] %>
+  <% let guestsPlusOneGoing = [] %>
+  <% let guestsPlusOneNotGoing = [] %>
+  <% let guestsPlusOneUnsure = [] %>
+  <% for (var i = 0; i < guests.length; i++) {%>
+    <%  if (guests[i].rsvp === "I'm in!") { %>
+          <% guestsIn.push(guests[i]) %>
+    <% } else if (guests[i].rsvp === "Sadly I can't make it") { %>
+          <% guestsOut.push(guests[i]) %>
+    <% } else if (guests[i].rsvp === "Not sure yet") { %>
+          <% guestsNotSure.push(guests[i]) %>
+    <% } if (guests[i].rsvp === "I'm in!" && guests[i].plusOne !== '') { %>
+          <% guestsPlusOneGoing.push(guests[i]) %>
+    <% } if (guests[i].rsvp === "Sadly I can't make it" && guests[i].plusOne !== '') { %>
+          <% guestsPlusOneNotGoing.push(guests[i]) %>
+    <% } if (guests[i].rsvp === "Not sure yet" && guests[i].plusOne !== '') { %>
+          <% guestsPlusOneUnsure.push(guests[i]) %>
+    <% } %>
+  <% } %>
+  <% let sum = (guests.length + guestsPlusOneGoing.length) %>
+  <% let sumGoing = (guestsIn.length + guestsPlusOneGoing.length) %>
+  <% let sumNotGoing = (guestsOut.length + guestsPlusOneNotGoing.length) %>
+  <% let sumUnsure = (guestsNotSure.length + guestsPlusOneUnsure.length) %>
+
+<%# GUEST LIST %>
+<%# <!-- GOING --> %>
+<ul> <span id="going"><h5>Going: <%=sumGoing%></h5></span>
+  <% for (let i = 0; i < guests.length; i++) { %>
+    <% if (guests[i].rsvp === "I'm in!") { %>
+    <li>
+      <div class="GUESTS" onclick="location.href='/guests/<%=guests[i].id%>';" style="cursor: pointer;">
+        <div class="INFO">
+          <h4><%=guests[i].name%></h4>
+          +1: <strong><%=guests[i].plusOne%></strong> <br> <br>
+          <strong>Invited:</strong><span class="invited<%=guests[i].id%>"> <%=guests[i].invited%> </span> <br>
+          <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
+        </div>
+        <div class="BUTTONS">
+            <!-- EDIT -->
+          <a class="button" href="/guests/<%=guests[i].id%>/edit">Edit</a>
+            <!-- DELETE -->
+          <form class="" action="/guests/<%=guests[i].id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE">
+          </form> <br>
+        </div>
+      </div>
+    </li>
+    <% } %>
+  <% } %>
+</ul>
+
+<%# <!-- NOT GOING --> %>
+<ul> <span id="notgoing"><h5>Not Going: <%=sumNotGoing%></h5></span>
+  <% for (let i = 0; i < guests.length; i++) { %>
+    <% if (guests[i].rsvp === "Sadly I can't make it") { %>
+    <li>
+      <div class="GUESTS" onclick="location.href='/guests/<%=guests[i].id%>';" style="cursor: pointer;">
+        <div class="INFO">
+          <h4><%=guests[i].name%></h4>
+          +1: <strong><%=guests[i].plusOne%></strong> <br> <br>
+          <strong>Invited:</strong><span class="invited<%=guests[i].id%>"> <%=guests[i].invited%> </span> <br>
+          <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
+        </div>
+        <div class="BUTTONS">
+            <!-- EDIT -->
+          <a class="button" href="/guests/<%=guests[i].id%>/edit">Edit</a>
+            <!-- DELETE -->
+          <form class="" action="/guests/<%=guests[i].id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE">
+          </form> <br>
+        </div>
+      </div>
+    </li>
+    <% } %>
+  <% } %>
+</ul>
+
+<%# <!-- UNDECIDED --> %>
+<ul> <span id="undecided"><h5>Undecided: <%=sumUnsure%></h5></span>
+  <% for (let i = 0; i < guests.length; i++) { %>
+    <% if (guests[i].rsvp === "Not sure yet") { %>
+    <li>
+      <div class="GUESTS" onclick="location.href='/guests/<%=guests[i].id%>';" style="cursor: pointer;">
+        <div class="INFO">
+          <h4><%=guests[i].name%></h4>
+          +1: <strong><%=guests[i].plusOne%></strong> <br> <br>
+          <strong>Invited:</strong><span class="invited<%=guests[i].id%>"> <%=guests[i].invited%> </span> <br>
+          <strong>RSVP:</strong> <span class="RSVP<%=guests[i].id%>"><%=guests[i].rsvp%></span><br>
+        </div>
+        <div class="BUTTONS">
+            <!-- EDIT -->
+          <a class="button" href="/guests/<%=guests[i].id%>/edit">Edit</a>
+            <!-- DELETE -->
+          <form class="" action="/guests/<%=guests[i].id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE">
+          </form> <br>
+        </div>
+      </div>
+    </li>
+    <% } %>
+  <% } %>
+</ul>

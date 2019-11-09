@@ -1,0 +1,19 @@
+<div class="QUICK-ADD">
+  <h4>Quick Add</h4>
+  <form action="/guests" method="POST">
+    <div class="row">
+      Name: <input type="text" name="name">
+      +1: <input type="text" name="plusOne">
+      RSVP:
+        <select name="rsvp">
+          <option value="Not sure yet">Not sure yet</option>
+          <option value="I'm in!">I'm in!</option>
+          <option value="Sadly I can't make it">Sadly I can't make it</option>
+        </select>
+      Invited: <span class="label-body">
+          <input type="radio" name="invited" value="Yes"> Yes
+          <input type="radio" name="invited" value="No"> No </span>
+      <input class="button button-primary" type="submit" value="Add Guest">
+    </div>
+  </form>
+</div>

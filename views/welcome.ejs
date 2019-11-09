@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome</title>
+    <% include ./partials/skeletonhead.ejs %>
     <link rel="stylesheet" href="/welcome.css">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
   </head>
   <body>
     <h1>Welcome</h1>
@@ -40,10 +37,10 @@
         <h2>Guest Search</h2>
         <p>Use your first name and last initial to update your info!</p>
         <form action="/search" method="post">
-            Name: <input type="text" name="name" placeholder="ex. Gianni N"><br>
-            <div class="BUTTONS">
-              <input class="button button-primary"type="submit" name="" value="Find">
-            </div>
+          Name: <input type="text" name="name" placeholder="ex. Gianni N"><br>
+          <div class="BUTTONS">
+            <input class="button button-primary"type="submit" name="" value="Find">
+          </div>
         </form>
       </div>
     </div>

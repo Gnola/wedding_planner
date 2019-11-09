@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%=guests.name%></title>
+    <% include ../partials/skeletonhead.ejs %>
+    <% include ../partials/conditionalcolors.ejs %>
     <link rel="stylesheet" href="/show.css">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
-      <% if (guests.rsvp === "I'm in!") {%>
-        <style> .RSVP<%=guests.id%> { color: green;} </style>
-      <% } else if (guests.rsvp === "Sadly I can't make it") { %>
-        <style> .RSVP<%=guests.id%> { color: red;} </style>
-      <% } else if (guests.rsvp === "Not sure yet") { %>
-        <style> .RSVP<%=guests.id%> { color: blue;} </style>
-      <% } %>
-      <% if (guests.invited === "Yes") {%>
-        <style> .invited { color: green;} </style>
-      <% } else if (guests.invited === "No") { %>
-        <style> .invited { color: red;} </style>
-      <% } %>
   </head>
   <body>
     <div class="GUESTS">
@@ -30,11 +16,11 @@
         <h5>Invited: <span class="invited"> <%=guests.invited%></span></h5>
         <h5>RSVP: <span class="RSVP<%=guests.id%>"> <%=guests.rsvp%> </span></h5>
         <h5>Category: <span class="category"><%=guests.category%></span></h5>
-      </div>
         <strong>Email:</strong> <br><%=guests.email%><br>
         <strong>Phone: </strong> <br> <%=guests.phone%><br>
         <strong>Address:</strong><br>
           <%=guests.street%>, <%=guests.city%>, <%=guests.state%> <%=guests.zip%> <br><br>
+      </div>
       <div class="BUTTONS">
         <a class="button button-primary" href="/guests/<%=guests.id%>/edit">Edit</a>
         <a class="button"href="/guests">HOME</a>
