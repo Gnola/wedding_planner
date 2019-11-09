@@ -8,11 +8,16 @@
   </head>
   <body>
   <!-- HEADER -->
-    <% include ../partials/header.ejs %>
+  <div class="HEADER">
+    <h1>Wedding - RSVPs</h1>
+    <!-- Log Out -->
+    <a class="button" href="/logout">Log Out</a>
+  </div>
   <!-- QUICK ADD -->
     <% include ../partials/quickadd.ejs %>
     <div class="BOTTOM">
-      <a class="button" href="guests/invited">Check Invites</a>
+      <a class="button" href="guests/invited">Invites</a>
+      <a class="button" href="/items">Budget</a>
     </div>
   <!-- GUEST LIST -->
     <div class="GUESTLIST">

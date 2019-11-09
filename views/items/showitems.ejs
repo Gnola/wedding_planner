@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%=items.service%></title>
+    <% include ../partials/skeletonhead.ejs %>
+  </head>
+  <body>
+    <div class="ITEMS">
+      <div class="NAME">
+        <h1><%=items.service%></h1>
+        <h5>Price: <strong>$<%=items.price%></strong></h5>
+      </div>
+      <div class="INFO">
+        <h5>Paid: <span class="invited"> <%=items.paid%></span></h5>
+        <h5>Notes: <span class="RSVP<%=items.id%>"> <%=items.notes%> </span></h5>
+      </div>
+      <div class="BUTTONS">
+        <a class="button button-primary" href="/items/<%=items.id%>/edit">Edit</a>
+        <a class="button"href="/items">HOME</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Budget</title>
+    <% include ../partials/skeletonhead.ejs %>
+    <link rel="stylesheet" href="/budget.css">
+  </head>
+  <body>
+    <div class="HEADER">
+      <h1>Wedding - Budget</h1>
+      <a class="button" href="/logout">Log Out</a>
+    </div>
+    <div class="QUICK-ADD">
+      <h4>Quick Add</h4>
+      <form action="/items" method="POST">
+        <div class="row">
+          Service: <input type="text" name="service">
+          Price: <input type="number" name="price">
+          Paid: <span class="label-body">
+              <input type="radio" name="paid" value="Yes"> Yes
+              <input type="radio" name="paid" value="No"> No </span>
+          Notes: <textarea name="notes" rows="8" cols="80"></textarea>
+          <input class="button button-primary" type="submit" value="Add Item">
+        </div>
+      </form>
+    </div>
+    <div class="BOTTOM">
+      <a class="button" href="guests/invited">Invites</a>
+      <a class="button" href="/guests">RSVP</a>
+    </div>
+    <div class="ITEMLIST">
+      <ul> PAID
+        <% for (let i = 0; i < items.length; i++) { %>
+          <% if (items[i].paid === "Yes") { %>
+            <li>
+              <div class="ITEMS" onclick="location.href='/items/<%=items[i].id%>';" style="cursor: pointer;">
+                Service: <%=items[i].service%> <br>
+                Price: $<%=items[i].price%> <br>
+                Paid? <%=items[i].paid%> <br>
+                Notes: <%=items[i].notes%> <br>
+                <a class="button" href="/items/<%=items[i].id%>/edit">Edit</a>
+                <form class="" action="/items/<%=items[i].id%>?_method=DELETE" method="POST">
+                  <input type="submit" value="DELETE">
+                </form>
+              </div>
+
+            </li>
+          <% } %>
+        <% } %>
+      </ul>
+      <ul> UNPAID
+        <% for (let i = 0; i < items.length; i++) { %>
+          <% if (items[i].paid === "No") { %>
+            <li>
+              <div class="ITEMS" onclick="location.href='/items/<%=items[i].id%>';" style="cursor: pointer;">
+                Service: <%=items[i].service%> <br>
+                Price: $<%=items[i].price%> <br>
+                Paid? <%=items[i].paid%> <br>
+                Notes: <%=items[i].notes%> <br>
+                <a class="button" href="/items/<%=items[i].id%>/edit">Edit</a>
+                <form class="" action="/items/<%=items[i].id%>?_method=DELETE" method="POST">
+                  <input type="submit" value="DELETE">
+                </form>
+              </div>
+            </li>
+          <% } %>
+        <% } %>
+      </ul>
+    </div>
+    <div class="BOTTOM">
+      <a class="button button-primary" href="/items/new">Create New</a><br>
+    </div>
+  </body>
+</html>

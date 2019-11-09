@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Item</title>
+    <% include ../partials/skeletonhead.ejs %>
+  </head>
+  <body>
+    <h1>New Budget Item</h1>
+    <form action="/items" method="POST">
+      <span class="rows1">
+        <strong>Service:</strong> <input type="text" name="service">
+      </span>
+      <span class="rows1">
+        <strong>Price:</strong> <input type="number" name="price">
+      </span>
+      <div class="row">
+        <strong>Paid:</strong> <span class="label-body">
+          <input type="radio" name="paid" value="Yes"> Yes
+          <input type="radio" name="paid" value="No"> No </span>
+      </div>
+      <span class="rows2">
+        <strong>Notes:</strong> <textarea name="notes" rows="8" cols="80"></textarea>
+      </span>
+      <div class="BUTTONS">
+        <input class="button button-primary" type="submit" value="Add Item">
+        <a class="button" href="/items">Cancel</a>
+      </div>
+    </form>
+  </body>
+</html>

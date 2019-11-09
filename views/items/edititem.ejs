@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Edit <%=items.name%></title>
+    <% include ../partials/skeletonhead.ejs %>
+  </head>
+  <body>
+    <div class="ITEMS">
+      <h1>Edit <%=items.service%></h1>
+      <form action="/items/<%=items.id%>?_method=PUT" method="POST">
+        <span class="rows1">
+          <strong>Service:</strong>  <input type="text" name="service" value="<%=items.service%>">
+        </span>
+        <span class="rows1">
+          <strong>Price:</strong> <input type="number" name="price" value="<%=items.price%>"> <br>
+        </span>
+        <div class="row">
+          <strong>Paid:</strong><span class="label-body">
+            <% if (items.paid === 'Yes') { %>
+              <input type="radio" name="paid" value="Yes" checked> Yes
+              <input type="radio" name="paid" value="No"> No
+            <% } else if (items.paid === 'No') { %>
+              <input type="radio" name="paid" value="Yes"> Yes
+              <input type="radio" name="paid" value="No" checked> No
+            <% } %> </span> <br>
+        </div>
+        <div class="row">
+          Notes: <textarea name="notes" rows="8" cols="80"><%=items.notes%></textarea>
+        </div>
+        <div class="BUTTONS">
+          <input class="button button-primary" type="submit" name="" value="Submit Changes">
+          <a class="button" href="/items/<%=items.id%>">Cancel</a>
+        </div>
+      </form>
+  </body>
+</html>

@@ -36,6 +36,8 @@ app.use('/sessions', sessionController)
 const searchController = require('./controllers/search.js') // FIND GUESTS
 app.use('/search', searchController)
 
+const itemsController = require('./controllers/items.js') // FIND GUESTS
+app.use('/items', itemsController)
 
 
 // ROUTES //
