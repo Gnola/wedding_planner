@@ -52,12 +52,6 @@
         <div class="row">
           Name: <input type="text" name="name">
           +1: <input type="text" name="plusOne">
-          RSVP:
-            <select name="rsvp">
-              <option value="Not sure yet">Not sure yet</option>
-              <option value="I'm in!">I'm in!</option>
-              <option value="Sadly I can't make it">Sadly I can't make it</option>
-            </select>
           Invited: <span class="label-body">
               <input type="radio" name="invited" value="Yes"> Yes
               <input type="radio" name="invited" value="No"> No </span>
@@ -65,11 +59,8 @@
         </div>
       </form>
     </div>
-    <!-- INVITE COUNT -->
-    <div class="INVITECOUNT">
-      <strong>Invite Count:</strong>
-      <span><strong>Sent:</strong> <%=invited.length%> </span>
-      <span><strong>Still to send:</strong> <%=notInvited.length%> </span>
+    <div class="BOTTOM">
+      <a class="button" href="/guests">Back</a><br>
     </div>
   <!-- GUEST LIST -->
     <div class="GUESTLIST">
@@ -99,7 +90,7 @@
         <% } %>
       </ul>
       <!-- NOT GOING -->
-      <ul> <span id="notgoing"><h5>Not Sent: <%=notInvited.length%></h5></span>
+      <ul> <span id="notgoing"><h5>Still to send: <%=notInvited.length%></h5></span>
         <% for (let i = 0; i < guests.length; i++) { %>
           <% if (guests[i].invited === "No") { %>
           <li>
