@@ -17,7 +17,7 @@
   margin: 5px 0;
 }
   .QUICK-ADD > form {
-    margin: 0 4px;
+    margin: 0 auto;
   }
 
 .GUESTCOUNT {
@@ -81,12 +81,12 @@ ul {
 .GUESTS {
   border: 1px solid black;
   border-radius: 3px;
-  box-shadow: 2px 2px 2px;
+  box-shadow: 2px 3px 3px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 450px;
-  max-width: 600px;
+  width: 525px;
+  max-width: 525px;
   /* height: 150px; */
   max-height: 170px;
   margin: 10px 0;
@@ -99,6 +99,9 @@ ul {
   }
   .GUESTS > .INFO {
     margin-bottom: 5px;
+  }
+.INFO > h4 {
+    margin-bottom: 0px;
   }
 
   .BUTTONS {

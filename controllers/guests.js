@@ -13,8 +13,6 @@ router.post('/', (req, res) => {
   Guest.create( // create a GUEST using the schema from MODELS/GUESTS.JS
     req.body, // get info from req.body
     (err, createdGuest) => { // then..
-      console.log(createdGuest);
-      console.log(req.body);
       res.redirect('/guests') // send them back to the HOMEPAGE
     }
   )
@@ -39,6 +37,20 @@ router.get('/', (req, res) => {
   }
 })
 
+router.get('/invited', (req, res) => {
+    Guest.find(
+      {},
+      (err, allGuests) => {
+        console.log(allGuests);
+        res.render(
+          'guests/invited.ejs',
+          {
+            guests: allGuests,
+          }
+        )
+      }
+    )
+})
 
 // SHOW GUEST
 router.get('/:id', (req, res) => {
@@ -52,6 +64,8 @@ router.get('/:id', (req, res) => {
     }
   )
 })
+
+
 
 
 // DELETE GUEST
