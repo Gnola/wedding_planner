@@ -53,7 +53,6 @@ router.get('/:id/edit', (req, res) => {
 
 // UPDATE
 router.put('/:id', (req, res) => {
-  console.log(req.body);
   Guest.findByIdAndUpdate(
     req.params.id,
     req.body,
