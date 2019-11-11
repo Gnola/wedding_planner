@@ -6,14 +6,14 @@
     <% include ../partials/skeletonhead.ejs %>
     <link rel="stylesheet" href="/show.css">
     <% if (items.paid === "Yes") {%>
-      <style> .paid<%=items.id%> { color: green;} </style>
+      <style> .paid<%=items.id%> { color: rgb(65, 78, 67);} </style>
     <% } else if (items.paid === "No") { %>
-      <style> .paid<%=items.id%> { color: red;} </style>
+      <style> .paid<%=items.id%> { color: maroon;} </style>
     <% } %>
   </head>
   <body>
     <div class="ITEMS">
-        <h1><%=items.service%></h1>
+      <h1><%=items.service%></h1>
       <div class="INFO">
         <h5>Price: <strong>$<%=items.price%></strong></h5>
         <h5>Paid: <span class="paid<%=items.id%>"> <%=items.paid%></span></h5>

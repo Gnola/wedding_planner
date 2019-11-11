@@ -32,13 +32,12 @@
                 <% } %>
               </select>
         </span>
-        <h5>Info</h5>
-          <strong>Email:</strong> <input type="email" name="email" value="<%=guests.email%>">
+          <strong>Email:</strong> <input type="email" name="email" value="<%=guests.email%>"> <br>
           <strong>Phone:</strong> <input type="tel" name="phone" value="<%=guests.phone%>"> <br>
             <strong>Street:</strong> <input type="text" name="street" value="<%=guests.street%>">
             <strong>City:</strong> <input type="text" name="city" value="<%=guests.city%>"> <br>
             <strong>State:</strong> <input type="text" name="state" value="<%=guests.state%>">
-            <strong>Zip:</strong> <input type="text" name="zip" value="<%=guests.zip%>"> <br><br>
+            <strong>Zip:</strong> <input type="text" name="zip" value="<%=guests.zip%>"> <br>
         <div class="BUTTONS">
           <input class="button button-primary" type="submit" name="" value="Submit Changes">
           <a class="button" href="/search/<%=guests.id%>">Cancel</a>

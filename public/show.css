@@ -1,3 +1,4 @@
+/* SHOW GUESTS / ITEMS */
 body {
   background-image: url('https://images.unsplash.com/photo-1516150615415-1bcb16bc2c91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
   background-repeat: no-repeat;
@@ -6,31 +7,34 @@ body {
 }
 
 .GUESTS {
-  background-color: rgba(245, 222, 179, 1);
+  background-color: rgba(245, 222, 179, .9);
   border-radius: 3px;
   box-shadow: 3px 4px 5px;
   max-width: 500px;
   margin: 100px auto;
   text-align: center;
 }
+  .GUESTS > .NAME {
+    margin-top: 10px;
+    text-align: center;
+  }
+
 .ITEMS {
-  background-color: rgba(245, 222, 179, 1);
+  background-color: rgba(245, 222, 179, .9);
   border-radius: 3px;
   box-shadow: 3px 4px 5px;
   max-width: 500px;
-  height: 360px;
   margin: 100px auto;
   text-align: center;
 }
+  .ITEMS > h1 {
+    text-align: center;
+    margin: 20px auto;
+  }
 
-.ITEMS > h1 {
+.INFO {
   text-align: center;
-  margin: 20px auto;
-}
-
-.GUESTS > .NAME {
-  margin-top: 10px;
-  text-align: center;
+  margin-bottom: 10px;
 }
 .row {
   display: flex;
@@ -46,11 +50,6 @@ textarea {
 .category {
   font-weight: bold;
 }
-.INFO {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
 
 .BUTTONS {
   display: flex;
@@ -63,14 +62,24 @@ textarea {
 
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+    body {
+      background-size: auto;
+    }
     .GUESTS {
       max-width: 350px;
-      margin: 50px auto;
+      margin: 150px auto;
+      background-color: rgba(245, 222, 179, .9);
+      border-radius: 3px;
+      box-shadow: 3px 4px 5px;
     }
     .ITEMS {
       max-width: 350px;
-      margin: auto;
+      /* max-height: 325px; */
+      margin: 200px auto;
+      background-color: rgba(245, 222, 179, .9);
+      border-radius: 3px;
+      box-shadow: 3px 4px 5px;
     }
     .ITEMS > form {
       display: flex;

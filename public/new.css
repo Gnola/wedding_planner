@@ -1,3 +1,4 @@
+/* NEW GUEST / ITEM */
 body {
   background-image: url('https://images.unsplash.com/photo-1516150615415-1bcb16bc2c91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
   background-repeat: no-repeat;
@@ -7,6 +8,7 @@ body {
 .NAME {
   color: green;
 }
+
 .GUESTS {
   background-color: rgba(245, 222, 179, 1);
   border: 2px solid black;
@@ -16,6 +18,11 @@ body {
   margin: 100px auto;
   text-align: center;
 }
+  .GUESTS > h1 {
+    text-align: center;
+    margin-top: 10px;
+  }
+
 .ITEMS {
   background-color: rgba(245, 222, 179, 1);
   border: 2px solid black;
@@ -25,22 +32,18 @@ body {
   margin: 100px auto;
   text-align: center;
 }
+  .ITEMS > h1 {
+    text-align: center;
+    margin-top: 10px;
+  }
 
-.GUESTS > h1 {
-  text-align: center;
-  margin-top: 10px;
-}
-.ITEMS > h1 {
-  text-align: center;
-  margin-top: 10px;
-}
+
 form > h5 {
   text-align: center;
 }
 textarea {
   width: 300px;
 }
-
 .row {
   display: flex;
   flex-direction: column;
@@ -53,7 +56,6 @@ textarea {
   margin-right: 50px;
 }
 
-
 .BUTTONS {
   display: flex;
   justify-content: center;
@@ -61,7 +63,13 @@ textarea {
   align-items: center;
 }
 
-@media (max-width: 1000px) {
+
+
+
+@media (max-width: 1100px) {
+  body {
+    background-size: cover;
+  }
   .GUESTS {
     max-width: 350px;
     margin: auto;
@@ -69,6 +77,10 @@ textarea {
   .GUESTS > form {
     display: flex;
     flex-direction: column;
+  }
+  input[type="text"], input[type="email"], input[type="tel"] {
+    width: 75%;
+    align-self: center;
   }
   }
 }

@@ -3,21 +3,21 @@
 <%# Home %>
 <% for (let i = 0; i < guests.length; i++) { %>
   <% if (guests[i].rsvp === "I'm in!") { %>
-    <style> .RSVP<%=guests[i].id%> { color: green;} </style>
+    <style> .RSVP<%=guests[i].id%> { color: rgb(65, 78, 67);} </style>
   <% } else if (guests[i].rsvp === "Sadly I can't make it") { %>
-    <style> .RSVP<%=guests[i].id%> { color: red;} </style>
+    <style> .RSVP<%=guests[i].id%> { color: maroon;} </style>
   <% } else if (guests[i].rsvp === "Not sure yet") {%>
-    <style> .RSVP<%=guests[i].id%> { color: blue;} </style>
+    <style> .RSVP<%=guests[i].id%> { color: black;} </style>
   <% } %>
 <% } %>
 
 <%# Show %>
 <% if (guests.rsvp === "I'm in!") {%>
-  <style> .RSVP<%=guests.id%> { color: green;} </style>
+  <style> .RSVP<%=guests.id%> { color: rgb(65, 78, 67);} </style>
 <% } else if (guests.rsvp === "Sadly I can't make it") { %>
-  <style> .RSVP<%=guests.id%> { color: red;} </style>
+  <style> .RSVP<%=guests.id%> { color: maroon;} </style>
 <% } else if (guests.rsvp === "Not sure yet") { %>
-  <style> .RSVP<%=guests.id%> { color: blue;} </style>
+  <style> .RSVP<%=guests.id%> { color: black;} </style>
 <% } %>
 
 <%# INVITED %>
@@ -25,15 +25,15 @@
 <%# Home %>
 <% for (let i = 0; i < guests.length; i++) { %>
   <% if (guests[i].invited === "Yes") {%>
-    <style> .invited<%=guests[i].id%> { color: green;} </style>
+    <style> .invited<%=guests[i].id%> { color: rgb(65, 78, 67);} </style>
     <% } else if (guests[i].invited === "No") { %>
-      <style> .invited<%=guests[i].id%> { color: red;} </style>
+      <style> .invited<%=guests[i].id%> { color: maroon;} </style>
     <% } %>
 <% } %>
 
 <%# Show %>
 <% if (guests.invited === "Yes") {%>
-  <style> .invited { color: green;} </style>
+  <style> .invited { color: rgb(65, 78, 67);} </style>
 <% } else if (guests.invited === "No") { %>
-  <style> .invited { color: red;} </style>
+  <style> .invited { color: maroon;} </style>
 <% } %>

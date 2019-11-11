@@ -32,12 +32,12 @@
     <div class="HEADER">
       <h1 class="date">08.08.2020</h1>
       <h1>BUDGET</h1>
-      <a class="button" href="/logout">Log Out</a>
     </div>
     <nav>
       <a href="/guests">RSVPs</a>
       <a href="guests/invited">Invites</a>
-      <a href="/items">Budget</a>
+      <a href="/items" style="color: sienna">Budget</a>
+      <a href="/logout">Log Out</a>
     </nav>
     <div class="QUICK-ADD">
       <h4>Quick Add</h4>
@@ -57,7 +57,7 @@
       <h5> PROJECTED TOTAL: $<%=total%> </h5>
     </div>
     <div class="ITEMLIST">
-      <ul> <h5 style="color: green;">PAID: $<%=totalSpent%></h5>
+      <ul> <h5 style="color: rgb(65, 78, 67);">Paid: $<%=totalSpent%></h5>
         <% for (let i = 0; i < items.length; i++) { %>
           <% if (items[i].paid === "Yes") { %>
             <li>
@@ -78,7 +78,7 @@
           <% } %>
         <% } %>
       </ul>
-      <ul> <h5 style="Color: red;">UNPAID $<%=totalToSpend%></h5>
+      <ul> <h5 style="Color: maroon;">Unpaid: $<%=totalToSpend%></h5>
         <% for (let i = 0; i < items.length; i++) { %>
           <% if (items[i].paid === "No") { %>
             <li>
