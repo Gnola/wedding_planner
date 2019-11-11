@@ -36,7 +36,7 @@ body {
     justify-content: center;
   }
   .BUTTONS > input[type="submit"] {
-    background-color: rgb(78, 78, 67);
+    background-color: rgb(65, 78, 67);
     border: none;
   }
 

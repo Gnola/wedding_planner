@@ -1,3 +1,4 @@
+/* INDEX / INVITED / BUDGET */
 body {
   background-image: url('https://images.unsplash.com/photo-1516150615415-1bcb16bc2c91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
   background-repeat: no-repeat;
@@ -5,37 +6,44 @@ body {
   font-family: 'EB Garamond', serif;
 }
 
-
 .MAIN {
-  background-color: wheat;
+  background-color: rgba(245, 222, 179, 1);
   width: 95%;
   margin: 50px auto;
 }
-
 
 .HEADER {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: auto 10px 0 10px;
+  margin: auto 20px;
+  width: 90%;
 }
-
   .HEADER > h1 {
+    text-align: center;
     margin-top: 10px;
   }
-
+  .HEADER > .date {
+    font-family: 'Cabin Sketch', cursive;
+  }
+  .HEADER > a {
+    margin-left: 20px;
+  }
 
 nav {
   display: flex;
   justify-content: space-around;
   padding: 5px;
-  background-color: rgb(78, 78, 67);
+  background-color: rgb(65, 78, 67);
 }
   nav > a {
     font-size: 16px;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
+  }
+  nav > a:hover {
+    color: black;
   }
 
 
@@ -45,12 +53,31 @@ nav {
   flex-direction: column;
   align-items: center;
   margin: 5px 0;
+  font-size: 16px;
 }
   .QUICK-ADD > form {
     margin: 0 auto;
   }
 
+ul {
+  text-align: center;
+}
+li {
+  list-style-type: none;
+}
 
+.BOTTOM {
+  text-align: center;
+  margin: 15px;
+}
+.BOTTOM > a {
+  margin-bottom: 20px
+}
+/* END */
+
+
+
+/* INDEX / INVITED */
 .GUESTLIST {
   display: flex;
   flex-direction: row;
@@ -59,24 +86,17 @@ nav {
   margin: auto;
 }
 
-  ul {
-    text-align: center;
-  }
   #going {
     color: green;
   }
 
   #notgoing {
-    color: red;
+    color: rgb(101, 7, 7);
   }
 
-  #undecided {
+  /* #undecided {
     color: blue;
-  }
-
-  li {
-    list-style-type: none;
-  }
+  } */
 
 
 .GUESTS {
@@ -102,6 +122,7 @@ nav {
         margin-top: 8px;
         margin-bottom: 0px;
       }
+
     .plusOne {
           font-size: 18px;
           font-weight: bold;
@@ -112,21 +133,47 @@ nav {
     display: flex;
     justify-content: center;
   }
-    .BUTTONS > a {
-      border-color: rgb(78, 78, 67);
-    }
-    input[type="submit"] {
-      border-color: rgb(78, 78, 67);
+
+
+
+    /* BUDGET */
+    .TOTAL {
+      text-align: center;
+      margin: 15px;
     }
 
-.BOTTOM {
-  text-align: center;
-  margin: 15px;
-}
-.BOTTOM > a {
-  color: rgb(78, 78, 67);
-}
+    .ITEMLIST {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin: auto;
+    }
 
+    .ITEMS {
+      border: 1px solid black;
+      border-radius: 3px;
+      box-shadow: 2px 3px 3px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 500px;
+      max-width: 500px;
+      height: 150px;
+      max-height: 150px;
+      margin: 10px 0;
+    }
+
+    .ITEMS > .BUTTONS {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+    }
 
 
 
@@ -155,6 +202,10 @@ nav {
     margin: auto;
   }
   .GUESTS {
+    max-width: 350px;
+    margin: auto;
+  }
+  .ITEMS {
     max-width: 350px;
     margin: auto;
   }

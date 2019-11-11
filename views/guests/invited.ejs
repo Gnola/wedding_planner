@@ -7,25 +7,28 @@
     <link rel="stylesheet" href="/index.css">
   </head>
   <body>
-  <!-- HEADER -->
-  <div class="HEADER">
-    <h1>Wedding - Invites</h1>
-    <a class="button" href="/logout">Log Out</a>
-  </div>
-  <nav>
-    <a href="/guests">Home</a>
-    <a href="guests/invited">Invites</a>
-    <a href="/items">Budget</a>
-  </nav>
-  <!-- QUICK GUEST ADD -->
-    <% include ../partials/quickadd.ejs %>
-  <!-- GUEST LIST PARTIAL -->
-    <div class="GUESTLIST">
-      <% include ../partials/invited.ejs %>
-    </div>
-  <!-- BOTTOM BUTTONS -->
-    <div class="BOTTOM">
-      <a class="button button-primary" href="/guests/new">Create New</a><br>
+    <div class="MAIN">
+      <!-- HEADER -->
+      <div class="HEADER">
+        <h1 class="date">08.08.2020</h1>
+        <h1>INVITES</h1>
+        <a class="button" href="/logout">Log Out</a>
+      </div>
+      <nav>
+        <a href="/guests">RSVPs</a>
+        <a href="/guests/invited">Invites</a>
+        <a href="/items">Budget</a>
+      </nav>
+      <!-- QUICK GUEST ADD -->
+        <% include ../partials/quickadd.ejs %>
+      <!-- GUEST LIST PARTIAL -->
+        <div class="GUESTLIST">
+          <% include ../partials/invited.ejs %>
+        </div>
+      <!-- BOTTOM BUTTONS -->
+        <div class="BOTTOM">
+          <a class="button button-primary" href="/guests/new">Create New</a><br>
+        </div>
     </div>
   </body>
 </html>

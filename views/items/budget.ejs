@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Budget</title>
     <% include ../partials/skeletonhead.ejs %>
-    <link rel="stylesheet" href="/budget.css">
+    <link rel="stylesheet" href="/index.css">
 
     <%# Pricing Color %>
     <% for (let i = 0; i < items.length; i++) { %>
@@ -28,10 +28,17 @@
     <% let total = totalSpent + totalToSpend %>
   </head>
   <body>
+    <div class="MAIN">
     <div class="HEADER">
-      <h1>Wedding - Budget</h1>
+      <h1 class="date">08.08.2020</h1>
+      <h1>BUDGET</h1>
       <a class="button" href="/logout">Log Out</a>
     </div>
+    <nav>
+      <a href="/guests">RSVPs</a>
+      <a href="guests/invited">Invites</a>
+      <a href="/items">Budget</a>
+    </nav>
     <div class="QUICK-ADD">
       <h4>Quick Add</h4>
       <form action="/items" method="POST">
@@ -45,10 +52,7 @@
         </div>
       </form>
     </div>
-    <div class="BOTTOM">
-      <a class="button" href="guests/invited">Invites</a>
-      <a class="button" href="/guests">RSVP</a>
-    </div>
+
     <div class="TOTAL">
       <h5> PROJECTED TOTAL: $<%=total%> </h5>
     </div>
@@ -60,9 +64,8 @@
               <div class="ITEMS" onclick="location.href='/items/<%=items[i].id%>';" style="cursor: pointer;">
                 <div class="INFO">
                   <h4><%=items[i].service%></h4>
-                  <strong>$<%=items[i].price%></strong> <br> <br>
-                  Paid? <span id="item<%=items[i].id%>"> <%=items[i].paid%></span> <br>
-                  Notes: <%=items[i].notes%> <br>
+                  <h6>$<span class="price"> <%=items[i].price%> </span></h6>
+                  Notes: <%=items[i].notes%>
                 </div>
                 <div class="BUTTONS">
                   <a class="button" href="/items/<%=items[i].id%>/edit">Edit</a>
@@ -82,9 +85,8 @@
               <div class="ITEMS" onclick="location.href='/items/<%=items[i].id%>';" style="cursor: pointer;">
                 <div class="INFO">
                   <h4><%=items[i].service%></h4>
-                  <strong>$<%=items[i].price%></strong> <br> <br>
-                  Paid? <span id="item<%=items[i].id%>"> <%=items[i].paid%></span> <br>
-                  Notes: <%=items[i].notes%> <br>
+                  <h6>$<span class="price"> <%=items[i].price%> </span></h6>
+                  Notes: <%=items[i].notes%>
                 </div>
                 <div class="BUTTONS">
                   <a class="button" href="/items/<%=items[i].id%>/edit">Edit</a>
@@ -100,6 +102,7 @@
     </div>
     <div class="BOTTOM">
       <a class="button button-primary" href="/items/new">Create New</a><br>
+    </div>
     </div>
   </body>
 </html>
