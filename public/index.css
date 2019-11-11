@@ -1,7 +1,17 @@
 body {
-  background-color: wheat;
+  background-image: url('https://images.unsplash.com/photo-1516150615415-1bcb16bc2c91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'EB Garamond', serif;
 }
+
+
+.MAIN {
+  background-color: wheat;
+  width: 95%;
+  margin: 50px auto;
+}
+
 
 .HEADER {
   display: flex;
@@ -22,7 +32,7 @@ nav {
   background-color: rgb(78, 78, 67);
 }
   nav > a {
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -76,35 +86,47 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 525px;
-  max-width: 525px;
-  /* height: 150px; */
-  max-height: 170px;
+  width: 500px;
+  max-width: 500px;
+  height: 100px;
+  max-height: 100px;
   margin: 10px 0;
 }
 
-  .GUESTS > .BUTTONS {
+  .GUESTS > .INFO {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    align-items: center;
   }
-  .GUESTS > .INFO {
-    margin-bottom: 5px;
-  }
-  
-  .INFO > h4 {
-      margin-bottom: 0px;
-    }
+    .INFO > h4 {
+        margin-top: 8px;
+        margin-bottom: 0px;
+      }
+    .plusOne {
+          font-size: 18px;
+          font-weight: bold;
+        }
 
-  .BUTTONS {
+  .GUESTS > .BUTTONS {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
   }
+    .BUTTONS > a {
+      border-color: rgb(78, 78, 67);
+    }
+    input[type="submit"] {
+      border-color: rgb(78, 78, 67);
+    }
 
 .BOTTOM {
   text-align: center;
   margin: 15px;
 }
+.BOTTOM > a {
+  color: rgb(78, 78, 67);
+}
+
 
 
 

@@ -7,25 +7,27 @@
     <link rel="stylesheet" href="/index.css">
   </head>
   <body>
-  <!-- HEADER -->
-  <div class="HEADER">
-    <h1>Wedding - RSVPs</h1>
-    <a class="button" href="/logout">Log Out</a>
-  </div>
-  <nav>
-    <a href="/guests">Home</a>
-    <a href="guests/invited">Invites</a>
-    <a href="/items">Budget</a>
-  </nav>
-  <!-- QUICK ADD -->
-    <% include ../partials/quickadd.ejs %>
-  <!-- GUEST LIST -->
-    <div class="GUESTLIST">
-      <% include ../partials/index.ejs %>
-    </div>
-  <!-- BOTTOM BUTTONS -->
-    <div class="BOTTOM">
-      <a class="button button-primary" href="/guests/new">Create New</a><br>
+    <div class="MAIN">
+      <!-- HEADER -->
+      <div class="HEADER">
+        <h1>Wedding - RSVPs</h1>
+        <a class="button" href="/logout">Log Out</a>
+      </div>
+      <nav>
+        <a href="/guests">Home</a>
+        <a href="guests/invited">Invites</a>
+        <a href="/items">Budget</a>
+      </nav>
+      <!-- QUICK ADD -->
+        <% include ../partials/quickadd.ejs %>
+      <!-- GUEST LIST -->
+        <div class="GUESTLIST">
+          <% include ../partials/index.ejs %>
+        </div>
+      <!-- BOTTOM BUTTONS -->
+        <div class="BOTTOM">
+          <a class="button button-primary" href="/guests/new">Create New</a><br>
+        </div>
     </div>
   </body>
 </html>
