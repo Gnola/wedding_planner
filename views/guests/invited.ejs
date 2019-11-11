@@ -10,15 +10,15 @@
   <!-- HEADER -->
   <div class="HEADER">
     <h1>Wedding - Invites</h1>
-    <!-- Log Out -->
     <a class="button" href="/logout">Log Out</a>
   </div>
+  <nav>
+    <a href="/guests">Home</a>
+    <a href="guests/invited">Invites</a>
+    <a href="/items">Budget</a>
+  </nav>
   <!-- QUICK GUEST ADD -->
     <% include ../partials/quickadd.ejs %>
-    <div class="BOTTOM">
-      <a class="button" href="/guests">RSVPs</a>
-      <a class="button" href="/items">Budget</a>
-    </div>
   <!-- GUEST LIST PARTIAL -->
     <div class="GUESTLIST">
       <% include ../partials/invited.ejs %>

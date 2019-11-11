@@ -41,7 +41,6 @@ router.get('/invited', (req, res) => {
     Guest.find(
       {},
       (err, allGuests) => {
-        console.log(allGuests);
         res.render(
           'guests/invited.ejs',
           {
@@ -100,7 +99,6 @@ router.put('/:id', (req, res) => {
     req.body,
     {new:true},
     (err, updatedGuest) => {
-      // res.send(updatedGuest)
       res.redirect('/guests/' + updatedGuest.id)
     }
   )

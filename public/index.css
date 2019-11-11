@@ -1,12 +1,32 @@
-.HEADER > h1 {
-  margin-top: 10px;
+body {
+  background-color: wheat;
+  font-family: 'EB Garamond', serif;
 }
+
 .HEADER {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto 10px 0 10px;
 }
+
+  .HEADER > h1 {
+    margin-top: 10px;
+  }
+
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  background-color: rgb(78, 78, 67);
+}
+  nav > a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 
 
 .QUICK-ADD {
@@ -20,47 +40,7 @@
     margin: 0 auto;
   }
 
-.GUESTCOUNT {
-  border: 1px solid black;
-  max-width: 500px;
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  margin: 15px auto;
-}
 
-.INVITECOUNT {
-  border: 1px solid black;
-  max-width: 500px;
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  margin: 15px auto;
-}
-
-#going {
-  color: green;
-}
-
-#notgoing {
-  color: red;
-}
-
-#undecided {
-  color: blue;
-}
-
-/* OG GUESTLIST */
-/* .GUESTLIST {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: auto;
-  max-height: 800px;
-} */
-
-/* NEW GUESTLIST */
 .GUESTLIST {
   display: flex;
   flex-direction: row;
@@ -69,14 +49,25 @@
   margin: auto;
 }
 
-li {
-  list-style-type: none;
-}
+  ul {
+    text-align: center;
+  }
+  #going {
+    color: green;
+  }
 
-ul {
-  text-align: center;
-}
-/* END OF NEW GUESTLIST */
+  #notgoing {
+    color: red;
+  }
+
+  #undecided {
+    color: blue;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
 
 .GUESTS {
   border: 1px solid black;
@@ -100,9 +91,10 @@ ul {
   .GUESTS > .INFO {
     margin-bottom: 5px;
   }
-.INFO > h4 {
-    margin-bottom: 0px;
-  }
+  
+  .INFO > h4 {
+      margin-bottom: 0px;
+    }
 
   .BUTTONS {
     display: flex;
@@ -113,6 +105,28 @@ ul {
   text-align: center;
   margin: 15px;
 }
+
+
+
+/* .GUESTCOUNT {
+  border: 1px solid black;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.INVITECOUNT {
+  border: 1px solid black;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 15px auto;
+} */
+
+
 
 @media (max-width: 1000px) {
   .QUICKADD {

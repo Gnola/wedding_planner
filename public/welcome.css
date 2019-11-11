@@ -1,48 +1,68 @@
-h1 {
-  text-align: center;
+body {
+  /* background-image: url('https://images.unsplash.com/photo-1426170042593-200f250dfdaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80'); */
+  background-image: url('https://images.unsplash.com/photo-1516150615415-1bcb16bc2c91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
 }
+
+/* h1 {
+  text-align: center;
+  margin-top: 100px;
+} */
+
 .WELCOME {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1000px;
-  margin: auto;
+  align-items: center;
+  max-width: 600px;
+  margin: 100px auto;
 }
 .FORM {
+  background-color: rgba(245, 222, 179, .7);
   border: 1px solid black;
   width: 400px;
   margin: 20px;
   display: flex;
   flex-direction: column;
 }
-  .FORM > h2 {
+  .FORM > h3 {
     text-align: center;
   }
   .FORM > form {
     display: flex;
     justify-content: center;
   }
+  .BUTTONS > input[type="submit"] {
+    background-color: rgb(78, 78, 67);
+    border: none;
+  }
 
 .SEARCH {
+  background-color: rgba(245, 222, 179, .7);
   border: 1px solid black;
   width: 400px;
+  height: 250px;
   margin: 20px;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-  .SEARCH > form {
-  }
+
 
 .BUTTONS {
   display: flex;
   justify-content: center;
 }
 
+
+
 @media (max-width: 1000px) {
-  .FORM {
-    border: 1px solid black;
-    align-items: center;
-  }
+    .FORM {
+      border: 1px solid black;
+      /* align-items: center; */
+    }
   }
 }

@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="/welcome.css">
   </head>
   <body>
-    <h1>Welcome</h1>
+
     <div class="WELCOME">
-      <div class="FORM">
+      <h1>Welcome</h1>
+      <!-- <div class="FORM">
         <h2>Admin Sign Up</h2>
-        <!-- Submit user UN and PW to MODELS/USERS.JS and use userSchema to create req.body -->
         <form class="" action="/users" method="post">
           <div class="six columns">
             Username: <input type="text" name="username" value=""><br>
@@ -20,9 +20,9 @@
             </div>
           </div>
         </form>
-      </div>
+      </div> -->
       <div class="FORM">
-        <h2>Admin Log In</h2>
+        <h3>Admin Log In</h3>
         <form action="/sessions" method="POST">
           <div class="six columns">
             Username: <input type="text" name="username"><br>
@@ -34,7 +34,7 @@
         </form>
       </div>
       <div class="SEARCH">
-        <h2>Guest Search</h2>
+        <h3>Guest Search</h3>
         <p>Use your first name and last initial to update your info!</p>
         <form action="/search" method="post">
           Name: <input type="text" name="name" placeholder="ex. Gianni N"><br>
