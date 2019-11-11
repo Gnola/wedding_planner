@@ -1,27 +1,44 @@
+body {
+  background-image: url('https://images.unsplash.com/photo-1516150615415-1bcb16bc2c91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'EB Garamond', serif;
+}
 .NAME {
   color: green;
 }
 .GUESTS {
+  background-color: rgba(245, 222, 179, 1);
   border: 2px solid black;
   border-radius: 3px;
   box-shadow: 3px 4px 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* width: 350px; */
-  max-width: 550px;
-  /* height: 580px; */
-  /* max-height: 580px; */
-  margin: 10px auto;
+  max-width: 500px;
+  margin: 100px auto;
+  text-align: center;
+}
+.ITEMS {
+  background-color: rgba(245, 222, 179, 1);
+  border: 2px solid black;
+  border-radius: 3px;
+  box-shadow: 3px 4px 5px;
+  max-width: 500px;
+  margin: 100px auto;
+  text-align: center;
 }
 
 .GUESTS > h1 {
   text-align: center;
   margin-top: 10px;
 }
+.ITEMS > h1 {
+  text-align: center;
+  margin-top: 10px;
+}
 form > h5 {
   text-align: center;
+}
+textarea {
+  width: 300px;
 }
 
 .row {

@@ -4,7 +4,7 @@
     <title><%=guests.name%></title>
     <% include ../partials/skeletonhead.ejs %>
     <% include ../partials/conditionalcolors.ejs %>
-    <link rel="stylesheet" href="/show.css">    
+    <link rel="stylesheet" href="/show.css">
   </head>
   <body>
     <div class="GUESTS">
@@ -14,7 +14,6 @@
       </div>
       <div class="INFO">
         <h5>RSVP: <span class="RSVP<%=guests.id%>"> <%=guests.rsvp%> </span></h5>
-        <h5>Category: <span class="category"><%=guests.category%></span></h5>
         <strong>Email:</strong> <br><%=guests.email%><br>
         <strong>Phone: </strong> <br> <%=guests.phone%><br>
         <strong>Address:</strong><br>

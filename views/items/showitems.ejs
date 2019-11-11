@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title><%=items.service%></title>
     <% include ../partials/skeletonhead.ejs %>
-    <link rel="stylesheet" href="/items.css">
+    <link rel="stylesheet" href="/show.css">
     <% if (items.paid === "Yes") {%>
       <style> .paid<%=items.id%> { color: green;} </style>
     <% } else if (items.paid === "No") { %>
