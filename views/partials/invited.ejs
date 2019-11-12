@@ -17,7 +17,9 @@
           <div class="GUESTS" onclick="location.href='/guests/<%=guests[i].id%>';" style="cursor: pointer;">
             <div class="INFO">
               <h4><%=guests[i].name%></h4>
-              <h6> & <span class="plusOne"> <%=guests[i].plusOne%> </span></h6>
+              <% if(guests[i].plusOne !== "") {%>
+                <h6> & <span class="plusOne"> <%=guests[i].plusOne%> </span></h6>
+              <%}%>
             </div>
             <div class="BUTTONS">
                 <!-- EDIT -->
@@ -41,7 +43,10 @@
           <div class="GUESTS" onclick="location.href='/guests/<%=guests[i].id%>';" style="cursor: pointer;">
             <div class="INFO">
               <h4><%=guests[i].name%></h4>
-              <h6> & <span class="plusOne"> <%=guests[i].plusOne%> </span></h6>            </div>
+              <% if(guests[i].plusOne !== "") {%>
+                <h6> & <span class="plusOne"> <%=guests[i].plusOne%> </span></h6>
+              <%}%>
+            </div>
             <div class="BUTTONS">
                 <!-- EDIT -->
               <a class="button" href="/guests/<%=guests[i].id%>/edit">Edit</a>
