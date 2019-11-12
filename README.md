@@ -50,9 +50,9 @@ Created a partial to deal with all the JS used to decipher the counts of guests 
 First Run:
 
 Styled to make it easier to navigate as functionality was being added. Used the 'sign up' form to originally create an admin but took it out so guests weren't tempted to create their own users
-![alt text](https://github.com/Gnola/wedding-list/blob/master/img/QuickAdd.png "Quick Add Function")
+![alt text](https://github.com/Gnola/wedding-list/blob/master/img/OG%20Welcome.png "First Run")
 
 Second Run:
 
 Finished styling by taking out 'sign up' option and adding styling to give the website a tone.
-![alt text](https://github.com/Gnola/wedding-list/blob/master/img/QuickAdd.png "Quick Add Function")
+![alt text](https://github.com/Gnola/wedding-list/blob/master/img/New%20Welcome.png "Second Run")
