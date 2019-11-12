@@ -25,3 +25,19 @@ Mongo / MongoDB / Mongo Atlas
 
 ## Navigating the app
 From the homepage you are able to log in as an admin or search for yourself as a guest. When logging in as an admin you are able to view all the pages (rsvps, invites and budget) and manipulate the data however you need to. Depending on the info of the guest the lists will update accordingly. If you search for yourself as a guest you are only able to view and edit your information and are unaware of any other aspects of the website.
+
+
+## Code Snippits
+Quick Add Function:
+
+![alt text]()
+
+
+First Load and Click Function:
+
+![alt text](https://github.com/Gnola/Gnola.github.io/blob/master/news_app/imgs/Load_and_click_functions.png "Load and Click Functions")
+
+
+AJAX:
+
+![alt text](https://github.com/Gnola/Gnola.github.io/blob/master/news_app/imgs/AJAX.png "AJAX")
