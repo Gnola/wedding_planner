@@ -30,14 +30,17 @@ From the homepage you are able to log in as an admin or search for yourself as a
 ## Code Snippits
 Quick Add Function:
 
+Added a quick add function to quickly add guests or items
 ![alt text](https://github.com/Gnola/wedding-list/blob/master/img/QuickAdd.png "Quick Add Function")
 
 
 Search Route:
 
+Used a search route to keep guests away from admin access but edit info across the entire platform
 ![alt text](https://github.com/Gnola/wedding-list/blob/master/img/Search.png "Search Route")
 
 
 Guestcount Partial:
 
+Created a partial to deal with all the JS used to decipher the counts of guests according to their RSVP and plus ones
 ![alt text](https://github.com/Gnola/wedding-list/blob/master/img/Guestcount%20Partial.png "Guestcount Partial")
