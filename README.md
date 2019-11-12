@@ -35,9 +35,9 @@ Quick Add Function:
 
 Search Route:
 
-![alt text](https://github.com/Gnola/Gnola.github.io/blob/master/news_app/imgs/Load_and_click_functions.png "Search Route")
+![alt text](https://github.com/Gnola/wedding-list/blob/master/img/Search.png "Search Route")
 
 
 Guestcount Partial:
 
-![alt text](https://github.com/Gnola/Gnola.github.io/blob/master/news_app/imgs/AJAX.png "Guestcount Partial")
+![alt text](https://github.com/Gnola/wedding-list/blob/master/img/Guestcount%20Partial.png "Guestcount Partial")
