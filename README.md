@@ -56,3 +56,7 @@ Second Run:
 
 Finished styling by taking out 'sign up' option and adding styling to give the website a tone.
 ![alt text](https://github.com/Gnola/wedding-list/blob/master/img/New%20Welcome.png "Second Run")
+
+## Note to self
+
+The plan is to utilize this website throughout the wedding planning process and will be updated accordingly as the process continues. The idea behind this website is to mainly help the planning process while allowing guests to interact with the website as well.
