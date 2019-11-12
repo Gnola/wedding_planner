@@ -18,9 +18,20 @@ Javascript
 
 Node.js
 
+Mongo DB / Mongo Atlas
+
+Mongoose
+
 Express
 
-Mongo / MongoDB / Mongo Atlas
+Express sessions / Ejs
+
+Bcrypt
+
+Google Fonts
+
+Heroku
+
 
 
 ## Navigating the app
