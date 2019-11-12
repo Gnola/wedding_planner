@@ -74,6 +74,10 @@ textarea {
     max-width: 350px;
     margin: auto;
   }
+  .ITEMS {
+    max-width: 350px;
+    margin: 175px auto;
+  }
   .GUESTS > form {
     display: flex;
     flex-direction: column;
