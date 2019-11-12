@@ -30,14 +30,14 @@ From the homepage you are able to log in as an admin or search for yourself as a
 ## Code Snippits
 Quick Add Function:
 
-![alt text]()
+![alt text](https://github.com/Gnola/wedding-list/blob/master/img/QuickAdd.png "Quick Add Function")
 
 
-First Load and Click Function:
+Search Route:
 
-![alt text](https://github.com/Gnola/Gnola.github.io/blob/master/news_app/imgs/Load_and_click_functions.png "Load and Click Functions")
+![alt text](https://github.com/Gnola/Gnola.github.io/blob/master/news_app/imgs/Load_and_click_functions.png "Search Route")
 
 
-AJAX:
+Guestcount Partial:
 
-![alt text](https://github.com/Gnola/Gnola.github.io/blob/master/news_app/imgs/AJAX.png "AJAX")
+![alt text](https://github.com/Gnola/Gnola.github.io/blob/master/news_app/imgs/AJAX.png "Guestcount Partial")
