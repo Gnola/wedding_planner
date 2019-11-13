@@ -65,7 +65,7 @@
                   <h4><%=items[i].service%></h4>
                   <h6>$<span class="price"> <%=items[i].price%> </span></h6>
                   <% if (items[i].notes !== "") { %>
-                    Notes: <%=items[i].notes%>
+                    <%=items[i].notes%>
                   <% } %>
                 </div>
                 <div class="BUTTONS">
@@ -88,8 +88,8 @@
                   <h4><%=items[i].service%></h4>
                   <h6>$<span class="price"> <%=items[i].price%> </span></h6>
                   <% if (items[i].notes !== "") { %>
-                    Notes: <%=items[i].notes%>
-                  <% } %>  
+                    <%=items[i].notes%>
+                  <% } %>
                 </div>
                 <div class="BUTTONS">
                   <a class="button" href="/items/<%=items[i].id%>/edit">Edit</a>
