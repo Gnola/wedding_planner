@@ -9,6 +9,9 @@
         <% } else if (guests.rsvp === "Sadly I can't make it") { %>
           <option value="I'm in!">I'm in!</option>
           <option value="Not sure yet">Not sure yet</option>
+        <% } else if (guests.rsvp === "Not sure yet") { %>
+          <option value="I'm in!">I'm in!</option>
+          <option value="Sadly I can't make it">Sadly I can't make it</option>
         <% } %>
       </select>
 </span>
