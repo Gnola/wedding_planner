@@ -15,7 +15,7 @@
     <div class="ITEMS">
       <h1><%=items.service%></h1>
       <div class="INFO">
-        <h5>Price: <strong>$<%=items.price%></strong></h5>
+        <h5>Price: <strong>$<%=items.price.toLocaleString('en')%></strong></h5>
         <h5>Paid: <span class="paid<%=items.id%>"> <%=items.paid%></span></h5>
         <h5>Payee: <strong><%=items.payee%></strong></h5>
         <h5>Notes: <%=items.notes%> </h5>

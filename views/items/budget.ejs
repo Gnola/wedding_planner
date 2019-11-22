@@ -53,16 +53,16 @@
     </div>
 
     <div class="TOTAL">
-      <h5> PROJECTED TOTAL: $<%=total%> </h5>
+      <h5> PROJECTED TOTAL: $<%=total.toLocaleString('en')%> </h5>
     </div>
     <div class="ITEMLIST">
-      <ul> <h5 style="color: rgb(65, 78, 67);">Paid: $<%=totalSpent%></h5>
+      <ul> <h5 style="color: rgb(65, 78, 67);">Paid: $<%=totalSpent.toLocaleString('en')%></h5>
         <% for (let i = 0; i < items.length; i++) { %>
           <% if (items[i].paid === "Yes") { %>
             <li>
               <div class="ITEMS" onclick="location.href='/items/<%=items[i].id%>';" style="cursor: pointer;">
                 <div class="INFO">
-                  <h4><%=items[i].service%> - <small> $<%=items[i].price%></small> </h4>
+                  <h4><%=items[i].service%> - <small> $<%=items[i].price.toLocaleString('en')%></small> </h4>
                   <!-- <% if (items[i].notes !== "") { %>
                     <%=items[i].notes%>
                   <% } %> -->
@@ -78,13 +78,13 @@
           <% } %>
         <% } %>
       </ul>
-      <ul> <h5 style="Color: maroon;">Unpaid: $<%=totalToSpend%></h5>
+      <ul> <h5 style="Color: maroon;">Unpaid: $<%=totalToSpend.toLocaleString('en')%></h5>
         <% for (let i = 0; i < items.length; i++) { %>
           <% if (items[i].paid === "No") { %>
             <li>
               <div class="ITEMS" onclick="location.href='/items/<%=items[i].id%>';" style="cursor: pointer;">
                 <div class="INFO">
-                  <h4><%=items[i].service%> - <small> $<%=items[i].price%></small> </h4>
+                  <h4><%=items[i].service%> - <small> $<%=items[i].price.toLocaleString('en')%></small> </h4>
                   <!-- <% if (items[i].notes !== "") { %>
                     <%=items[i].notes%>
                   <% } %> -->

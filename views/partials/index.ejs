@@ -25,6 +25,17 @@
   <% let sumNotGoing = (guestsOut.length + guestsPlusOneNotGoing.length) %>
   <% let sumUnsure = (guestsNotSure.length + guestsPlusOneUnsure.length) %>
 
+<!-- GUEST SORT -->
+  <%function compare( a, b ) {%>
+  <% if ( a.name < b.name ){%>
+  <%    return -1;} %>
+  <% if ( a.name > b.name ){%>
+  <%    return 1;} %>
+  <%    return 0; %>
+  <%  }%>
+  <%guests.sort( compare );%>
+
+
 <%# GUEST LIST %>
 <%# <!-- GOING --> %>
 <ul> <span id="going"><h5>Going: <%=sumGoing%></h5></span>

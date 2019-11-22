@@ -9,8 +9,7 @@
   <body>
     <div class="GUESTS">
       <div class="NAME">
-        <h1><%=guests.name%></h1>
-        <h5>& <strong><%=guests.plusOne%></strong></h5>
+        <h1><%=guests.name%> <% if (guests.plusOne !== "") { %> & <%=guests.plusOne%> <%}%></h1>
       </div>
       <div class="INFO">
         <h5>Invited: <span class="invited"> <%=guests.invited%></span></h5>

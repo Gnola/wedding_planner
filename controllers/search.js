@@ -7,7 +7,7 @@ const Guest = require('../models/guests.js') // use guestSchema from /models/gue
 router.post('/', (req, res) => {
   Guest.findOne(
     // {},
-    {name:req.body.name},
+    {name:{ $regex : new RegExp(req.body.name, "i") }},
     (err, foundGuest) => {
       if (foundGuest === null) {
         res.redirect('/')

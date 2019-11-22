@@ -86,3 +86,7 @@ mongoose.connect(
 app.listen(PORT, () => {
   console.log('listening...');
 })
+
+var number = [4,2,3];
+
+console.log(number.sort());
