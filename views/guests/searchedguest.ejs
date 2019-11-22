@@ -9,18 +9,17 @@
   <body>
     <div class="GUESTS">
       <div class="NAME">
-        <h1><%=guests.name%></h1>
-        <h5>& <strong><%=guests.plusOne%></strong></h5>
+        <h1><%=guests.name%> <% if (guests.plusOne !== "") { %> & <%=guests.plusOne%> <%}%></h1>
       </div>
       <div class="INFO">
         <h5>RSVP: <span class="RSVP<%=guests.id%>"> <%=guests.rsvp%> </span></h5>
-        <strong>Email:</strong> <br><%=guests.email%><br>
+        <!-- <strong>Email:</strong> <br><%=guests.email%><br>
         <strong>Phone: </strong> <br> <%=guests.phone%><br>
         <strong>Address:</strong><br>
-          <%=guests.street%>, <%=guests.city%>, <%=guests.state%> <%=guests.zip%> <br><br>
+          <%=guests.street%>, <%=guests.city%>, <%=guests.state%> <%=guests.zip%> <br><br> -->
       </div>
       <div class="BUTTONS">
-        <a class="button button-primary" href="/search/<%=guests.id%>/edit">Edit</a>
+        <a class="button button-primary" href="/search/<%=guests.id%>/edit">Change RSVP</a>
         <a class="button"href="/logout">Done</a>
       </div>
     </div>

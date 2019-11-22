@@ -7,14 +7,16 @@
   </head>
   <body>
     <div class="GUESTS">
-      <h1>Edit <%=guests.name%></h1>
+      <h1><%=guests.name%><% if (guests.plusOne !== '') {%> & <%=guests.plusOne%>  <%}%></h1>
       <form action="/search/<%=guests.id%>?_method=PUT" method="POST">
-        <span class="rows1">
+        <!-- <span class="rows1">
           <strong>Name:</strong>  <input type="text" name="name" value="<%=guests.name%>">
         </span>
         <span class="rows1">
+          <% if (guests.plusOne !== '') {%>
           <strong>&</strong> <input type="text" name="plusOne" value="<%=guests.plusOne%>"> <br>
-        </span>
+          <%}%>
+        </span><br> -->
         <!-- RSVP / CATEGORY / INFO -->
         <span class="rows2">
           <strong>RSVP:</strong>
@@ -30,12 +32,12 @@
                 <% } %>
               </select>
         </span>
-          <strong>Email:</strong> <input type="email" name="email" value="<%=guests.email%>"> <br>
+          <!-- <strong>Email:</strong> <input type="email" name="email" value="<%=guests.email%>"> <br>
           <strong>Phone:</strong> <input type="tel" name="phone" value="<%=guests.phone%>"> <br>
             <strong>Street:</strong> <input type="text" name="street" value="<%=guests.street%>">
             <strong>City:</strong> <input type="text" name="city" value="<%=guests.city%>"> <br>
             <strong>State:</strong> <input type="text" name="state" value="<%=guests.state%>">
-            <strong>Zip:</strong> <input type="text" name="zip" value="<%=guests.zip%>"> <br>
+            <strong>Zip:</strong> <input type="text" name="zip" value="<%=guests.zip%>"> <br> -->
         <div class="BUTTONS">
           <input class="button button-primary" type="submit" name="" value="Submit Changes">
           <a class="button" href="/search/<%=guests.id%>">Cancel</a>
