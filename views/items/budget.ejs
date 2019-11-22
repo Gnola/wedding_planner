@@ -62,11 +62,10 @@
             <li>
               <div class="ITEMS" onclick="location.href='/items/<%=items[i].id%>';" style="cursor: pointer;">
                 <div class="INFO">
-                  <h4><%=items[i].service%></h4>
-                  <h6>$<span class="price"> <%=items[i].price%> </span></h6>
-                  <% if (items[i].notes !== "") { %>
+                  <h4><%=items[i].service%> - <small> $<%=items[i].price%></small> </h4>
+                  <!-- <% if (items[i].notes !== "") { %>
                     <%=items[i].notes%>
-                  <% } %>
+                  <% } %> -->
                 </div>
                 <div class="BUTTONS">
                   <a class="button" href="/items/<%=items[i].id%>/edit">Edit</a>
@@ -85,11 +84,10 @@
             <li>
               <div class="ITEMS" onclick="location.href='/items/<%=items[i].id%>';" style="cursor: pointer;">
                 <div class="INFO">
-                  <h4><%=items[i].service%></h4>
-                  <h6>$<span class="price"> <%=items[i].price%> </span></h6>
-                  <% if (items[i].notes !== "") { %>
+                  <h4><%=items[i].service%> - <small> $<%=items[i].price%></small> </h4>
+                  <!-- <% if (items[i].notes !== "") { %>
                     <%=items[i].notes%>
-                  <% } %>
+                  <% } %> -->
                 </div>
                 <div class="BUTTONS">
                   <a class="button" href="/items/<%=items[i].id%>/edit">Edit</a>
