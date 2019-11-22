@@ -6,7 +6,6 @@ const guestSchema = new mongoose.Schema ({
   name: {type:String, required: true},
   plusOne: {type:String, default: 'None'},
   rsvp: {type:String, default: 'Not sure yet'},
-  category: {type:String, default: 'Other'},
   email: String,
   phone: Number,
   street: String,
