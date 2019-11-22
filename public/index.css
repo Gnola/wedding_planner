@@ -104,11 +104,11 @@ li {
   box-shadow: 2px 3px 3px;
   border-radius: 3px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 500px;
   max-width: 500px;
-  height: 100px;
+  height: 60px;
   max-height: 100px;
   margin: 10px 0;
 }
@@ -116,14 +116,16 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 15px;
     color: white;
   }
-  .plusOne {
+  /* .plusOne {
       font-size: 18px;
       font-weight: bold;
-    }
+    } */
   .GUESTS > .BUTTONS {
     margin-top: 40px;
+    margin-right: 5px;
     display: flex;
     justify-content: center;
   }
@@ -171,7 +173,7 @@ form > input[type="submit"]{
   border-color: white;
 }
 .INFO > h4 {
-  margin-top: 8px;
+  /* margin-top: 8px; */
   margin-bottom: 0px;
 }
 
