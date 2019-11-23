@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="GUESTS">
-      <h1><%=guests.name%> & <%=guests.plusOne%></h1>
+      <h1><%=guests.name%> <% if (guests.plusOne !== "") { %> & <%=guests.plusOne%> <%}%></h1>
       <form action="/guests/<%=guests.id%>?_method=PUT" method="POST">
         <span class="rows1">
           <strong>Name:</strong>  <input type="text" name="name" value="<%=guests.name%>">
