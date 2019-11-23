@@ -75,6 +75,9 @@ body {
     .SEARCH {
       height: 230px;
     }
+    .WELCOME {
+      margin-top: 65px;
+    }
 
     .columns {
       width:auto;
