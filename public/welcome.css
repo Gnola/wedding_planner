@@ -64,7 +64,7 @@ body {
 
 @media (max-width: 1100px) {
     body {
-      background-size: cover;
+      background-size: auto;
     }
     .FORM > form {
       margin-bottom: 25px;
@@ -76,7 +76,7 @@ body {
       height: 230px;
     }
     .WELCOME {
-      margin-top: 65px;
+      margin-top: 50px;
     }
 
     .columns {

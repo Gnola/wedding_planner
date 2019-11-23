@@ -70,11 +70,11 @@ textarea {
 
 @media (max-width: 1100px) {
     body {
-      background-size: cover;
+      background-size: auto;
     }
     .GUESTS {
       max-width: 350px;
-      margin: auto;
+      margin: 50% auto;
       background-color: rgba(245, 222, 179, .9);
       border-radius: 3px;
       box-shadow: 3px 4px 5px;
