@@ -11,11 +11,11 @@ Planning a wedding is tough enough as it is so I wanted to create a website that
 ## Navigating the App
 From the homepage users are able to sign up and log in as an admin or search for themselves as a guest.
 
-![Home](Home.png "Home")
+![Home](img/Home.png "Home")
 
 When logged in as an admin, users are able to view all the pages (rsvps, invites and budget) and add/update guest and budget info accordingly. On the RSVP page, each guest is sorted in a list according to 'Going', 'Not Going' or 'Undecided' while on the invitation page guests are sorted according to whether or not they have been sent an invitation. Depending on the info of the guests, these lists will update and sort accordingly. For convenience there is even a guest count built in that counts all guests including their plus ones. There is also a budget page that deciphers whether or not services have been paid, along with a running total of costs. (NOTE: The 'Sign Up' function was utilized then removed for project purposes.)
 
-![Logged In](LoggedIn.gif "Logged In")
+![Logged In](img/LoggedIn.gif "Logged In")
 
 Admins can add guests/budget items by using the 'Create New' button or the 'Quick Add' section. Clicking on each guest/budget item allows the user to either view or edit information as they see fit. As a guest, users are able to access and edit their information such as RSVP, email and address simply by searching their name at the homepage and are only able to view and edit their own information and are unaware of any other aspects of the website that are confined to the admins.
 
