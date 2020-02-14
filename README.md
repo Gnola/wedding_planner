@@ -23,8 +23,11 @@ Admins can add guests/budget items by using the 'Create New' button or the 'Quic
 
 Clicking on each guest/budget item allows the user to either view or edit information as they see fit.
 
+![Editing](img/Edit.gif "Editing")
 
 As a guest, users are able to access and edit their information such as RSVP, email and address simply by searching their name at the homepage and are only able to view and edit their own information and are unaware of any other aspects of the website that are confined to the admins.
+
+![Guest Search](img/GuestSearch.gif "Guest Search")
 
 ## Behind the Scenes
 Quick Add Function:
