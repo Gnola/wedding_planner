@@ -17,7 +17,14 @@ When logged in as an admin, users are able to view all the pages (rsvps, invites
 
 ![Logged In](img/LoggedIn.gif "Logged In")
 
-Admins can add guests/budget items by using the 'Create New' button or the 'Quick Add' section. Clicking on each guest/budget item allows the user to either view or edit information as they see fit. As a guest, users are able to access and edit their information such as RSVP, email and address simply by searching their name at the homepage and are only able to view and edit their own information and are unaware of any other aspects of the website that are confined to the admins.
+Admins can add guests/budget items by using the 'Create New' button or the 'Quick Add' section and delete a guest simply by clicking the delete button on the specified guest/budget item.
+
+![Add and Delete](img/AddandDelete.gif "Add and Delete")
+
+Clicking on each guest/budget item allows the user to either view or edit information as they see fit.
+
+
+As a guest, users are able to access and edit their information such as RSVP, email and address simply by searching their name at the homepage and are only able to view and edit their own information and are unaware of any other aspects of the website that are confined to the admins.
 
 ## Behind the Scenes
 Quick Add Function:
