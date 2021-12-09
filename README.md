@@ -1,7 +1,17 @@
 # [Wedding Planner](https://weddingguestlist.herokuapp.com/)
 
-#### Tech Used:
-HTML / CSS / Skeleton CSS / JavaScript / Node.js / MongoDB/Mongoose / Express / EJS / Express Sessions & bcrypt
+## Tech Used:
+- HTML
+- CSS / Skeleton CSS
+- JavaScript
+- Node.js / Express / EJS
+- [MongoDB](https://cloud.mongodb.com/v2/5dc193f1553855186f3586d0#metrics/replicaSet/5dc19627014b7608f3b08bd4/explorer/test/guests/find) / Mongoose
+
+#### Additional Resources
+- Express Sessions
+- bcrypt
+
+#### Deployed With: [Heroku](https://dashboard.heroku.com/apps/weddingguestlist)
 
 
 ## About the App
@@ -55,3 +65,9 @@ First Run Design:
 
 ## Recap
 While useful for the basics of wedding planning such as a guest list and budget there are still some aspects that need to be added in order for this to be as functional as other wedding websites. Improvements include but are not limited to registry connection and personal preference of design features like the background of the homepage and title of the site. This specific app was built in order to help my fiancé and I plan our personal wedding so some aspects are personal and would need to be available to be edited according to other users.
+
+
+---
+
+### Resources
+- [General Assembly Instructions](https://git.generalassemb.ly/Software-Engineering-Immersive-Remote/SEIR-Avocado-Toast/blob/master/projects/project_2/README.md)
