@@ -57,11 +57,11 @@ Guest Count Partial:
 
 Created a partial to deal with all the JS used to decipher the counts of guests according to their RSVP and plus ones
 
-![alt text](img/Guestcount%20Partial.png "Guest Count Partial")
+![alt text](img/GuestCountPartial.png "Guest Count Partial")
 
 First Run Design:
 
-![alt text](img/OG%20Welcome.png "First Run")
+![alt text](img/OGWelcome.png "First Run")
 
 ## Recap
 While useful for the basics of wedding planning such as a guest list and budget there are still some aspects that need to be added in order for this to be as functional as other wedding websites. Improvements include but are not limited to registry connection and personal preference of design features like the background of the homepage and title of the site. This specific app was built in order to help my fiancé and I plan our personal wedding so some aspects are personal and would need to be available to be edited according to other users.
